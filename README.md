@@ -18,4 +18,5 @@ Now.. you have VentHub, which provide a way to you to express your feelings to t
 This application is oriented to the students, teachers and staffs in BJTU, who want to vent via internet.
 
 Age: 16-50 
+
 Needs: Someone who wants to express inner dissatisfaction, and remind related departments of some matters.
