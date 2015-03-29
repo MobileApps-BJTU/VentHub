@@ -31,6 +31,9 @@ public class Content {
 	@Column(name="posttime")
 	private Timestamp posttime;
 	
+	@Column(name="isannoy")
+	private String isAnnoy;
+	
 	@ManyToOne(targetEntity=User.class,cascade=CascadeType.ALL,optional=true,fetch=FetchType.LAZY)
 	@JoinColumn(name="email",insertable=false,updatable=false)
 	private User author;
@@ -64,6 +67,12 @@ public class Content {
 	}
 	public void setAuthor(User author) {
 		this.author = author;
+	}
+	public String getIsAnnoy() {
+		return isAnnoy;
+	}
+	public void setIsAnnoy(String isAnnoy) {
+		this.isAnnoy = isAnnoy;
 	}
 
 }

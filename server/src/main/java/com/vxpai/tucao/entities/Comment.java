@@ -43,6 +43,7 @@ public class Comment {
 	@JoinColumn(name="cid",insertable=false,updatable=false)
 	private Content vent;
 	
+	
 	public int getComid() {
 		return comid;
 	}
