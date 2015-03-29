@@ -22,7 +22,7 @@ public class LoginController {
 	@Autowired
 	private SessionFactory sessionFactory;
 	
-	@RequestMapping(value="/checkuserinfo")
+	@RequestMapping(value="/checkuserinfo", method=RequestMethod.POST)
 	public @ResponseBody String checkuserinfo(@RequestParam(value="email")String email, 
 											  @RequestParam(value="password")String password){
 		JSONObject json = new JSONObject();
@@ -31,6 +31,7 @@ public class LoginController {
 		query.setString("email", email);
 		query.setString("password", password);
 		List<User> ls = query.list();
+		session.close();
 		if(ls.size()>0){
 			json.put("status", "0");
 			return json.toString();
