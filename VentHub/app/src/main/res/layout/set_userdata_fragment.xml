@@ -13,7 +13,7 @@
         <ImageView
             android:layout_width="0dp"
             android:layout_height="fill_parent"
-            android:id="@+id/imageView17"
+            android:id="@+id/id_personal_data_back"
             android:layout_weight="1"
             android:src="@drawable/left"
             android:padding="@dimen/login_padding" />

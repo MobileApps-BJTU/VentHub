@@ -57,11 +57,11 @@ public class FriendListFragment extends ListFragment {
         super.onCreate(savedInstanceState);
 
         List<FriendListItem> list = new ArrayList<FriendListItem>();
-        list.add(new FriendListItem("","丿灬樱花笑"));
-        list.add(new FriendListItem("","丿灬樱花笑"));
-        list.add(new FriendListItem("","丿灬樱花笑"));
-        list.add(new FriendListItem("","丿灬樱花笑"));
-        list.add(new FriendListItem("","丿灬樱花笑"));
+        list.add(new FriendListItem("","Mike"));
+        list.add(new FriendListItem("","Ann"));
+        list.add(new FriendListItem("","Peter"));
+        list.add(new FriendListItem("","Paul"));
+        list.add(new FriendListItem("","John"));
 
         setListAdapter(new FriendListAdapter(getActivity(),list));
     }

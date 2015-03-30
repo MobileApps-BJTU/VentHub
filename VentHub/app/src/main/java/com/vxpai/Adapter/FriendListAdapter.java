@@ -25,6 +25,7 @@ public class FriendListAdapter extends BaseAdapter {
     private Context mContext;
 
     private LruCache<String, Bitmap> mLruCache;
+    private View rootView;
 
     public FriendListAdapter(Context context, List<FriendListItem> friendList){
         this.inflater = LayoutInflater.from(context);
@@ -49,7 +50,7 @@ public class FriendListAdapter extends BaseAdapter {
     }
 
     @Override
-    public Object getItem(int position) {
+    public FriendListItem getItem(int position) {
         return friendList.get(position);
     }
 
@@ -60,14 +61,14 @@ public class FriendListAdapter extends BaseAdapter {
 
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
-        View view = inflater.inflate(R.layout.item_friendlist, null);
 
-        ImageView image = (ImageView)view.findViewById(R.id.id_friend_list_img);
-        TextView username = (TextView)view.findViewById(R.id.id_friendlist_username);
-        ImageView delete = (ImageView)view.findViewById(R.id.id_friendlist_delete);
+        View rootView = inflater.inflate(R.layout.item_friendlist, null);
+        ImageView userImg = (ImageView)rootView.findViewById(R.id.id_friend_list_img);
+        TextView nickName = (TextView)rootView.findViewById(R.id.id_friendlist_username);
+        ImageView deleteBtn = (ImageView)rootView.findViewById(R.id.id_friendlist_delete);
 
-        username.setText(friendList.get(position).getmNickName());
+        nickName.setText(friendList.get(position).getmNickName());
 
-        return view;
+        return rootView;
     }
 }

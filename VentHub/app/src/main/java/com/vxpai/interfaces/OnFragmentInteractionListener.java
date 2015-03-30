@@ -11,11 +11,13 @@ public interface OnFragmentInteractionListener {
 
     public void onGoBackToMain();
 
-    public void onLogin();
+    public void onLogin(String email,String password);
 
     public void onShowDetailShits(ShitListItem shit);
 
     public void onNewUser();
 
     public void onGoBackToLogin();
+
+    public void onEditPersonalData();
 }

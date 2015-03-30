@@ -94,7 +94,7 @@
                 android:textSize="@dimen/footbar_text_size"
                 android:layout_weight="1"
                 android:textStyle="bold"
-                android:textColor="#ffd55b44" />
+                android:textColor="@color/main_color" />
         </LinearLayout>
 
         <LinearLayout
@@ -139,7 +139,7 @@
                 android:textSize="@dimen/footbar_text_size"
                 android:layout_weight="1"
                 android:textStyle="bold"
-                android:textColor="#ffd55b44" />
+                android:textColor="@color/main_color" />
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

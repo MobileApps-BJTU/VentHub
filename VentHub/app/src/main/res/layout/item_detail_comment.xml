@@ -18,7 +18,7 @@
             <ImageView
                 android:layout_width="0dp"
                 android:layout_height="fill_parent"
-                android:id="@+id/imageView24"
+                android:id="@+id/id_head_comment"
                 android:layout_weight="1"
                 android:src="@drawable/battlefield"
                 android:adjustViewBounds="true" />
@@ -32,17 +32,18 @@
                 <TextView
                     android:layout_width="fill_parent"
                     android:layout_height="0dp"
-                    android:id="@+id/textView27"
+                    android:id="@+id/id_nickname_comment"
                     android:layout_weight="1"
                     android:textSize="@dimen/text_size"
                     android:gravity="left|center_vertical"
-                    android:paddingLeft="5dp" />
+                    android:paddingLeft="5dp"
+                    android:text="丿灬樱花笑" />
 
                 <TextView
                     android:layout_width="fill_parent"
                     android:layout_height="0dp"
-                    android:text="New Text"
-                    android:id="@+id/textView30"
+                    android:text="17:00"
+                    android:id="@+id/id_datetime_comment"
                     android:layout_weight="1"
                     android:gravity="left|center_vertical"
                     android:paddingLeft="5dp"
@@ -54,7 +55,8 @@
             android:orientation="horizontal"
             android:layout_width="0dp"
             android:layout_height="fill_parent"
-            android:layout_weight="1" >
+            android:layout_weight="1"
+            android:id="@+id/id_reply_comment">
 
             <ImageView
                 android:layout_width="0dp"
@@ -96,15 +98,15 @@
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="New Text"
-                android:id="@+id/textView32"
+                android:text="测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容测试内容"
+                android:id="@+id/id_detail_comment"
                 android:textSize="@dimen/text_size"
                 android:paddingBottom="@dimen/login_padding" />
 
             <ListView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/listView2" />
+                android:id="@+id/id_replylist_comment" />
         </LinearLayout>
 
     </LinearLayout>

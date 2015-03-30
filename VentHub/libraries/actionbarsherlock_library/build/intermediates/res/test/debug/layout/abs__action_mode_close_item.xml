@@ -29,4 +29,4 @@
                android:scaleType="fitCenter"
                android:src="?attr/actionModeCloseDrawable" />
 </com.actionbarsherlock.internal.nineoldandroids.widget.NineLinearLayout>
-<!-- From: file:/E:/Procedures/git/VentHub/libraries/actionbarsherlock_library/res/layout/abs__action_mode_close_item.xml --><!-- From: file:/E:/Procedures/git/VentHub/libraries/actionbarsherlock_library/build/intermediates/bundles/debug/res/layout/abs__action_mode_close_item.xml -->
+<!-- From: file:/Users/KunKun/eclipse%20workspace/VentHub/VentHub/libraries/actionbarsherlock_library/res/layout/abs__action_mode_close_item.xml --><!-- From: file:/Users/KunKun/eclipse%20workspace/VentHub/VentHub/libraries/actionbarsherlock_library/build/intermediates/bundles/debug/res/layout/abs__action_mode_close_item.xml -->

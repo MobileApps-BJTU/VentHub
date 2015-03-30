@@ -10,8 +10,10 @@ import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -20,7 +22,7 @@ import android.widget.ListView;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 
-import com.vxpai.entity.User;
+import com.vxpai.entity.UserListItem;
 import com.vxpai.interfaces.OnFragmentInteractionListener;
 import com.vxpai.utils.ImageUtil;
 import com.vxpai.Adapter.LoggedonUserAdapter;
@@ -47,7 +49,7 @@ import java.util.List;
     private TextView mNewUser, mForgetPwd;
 
     private PopupWindow mPopupWindow;
-    private List<User> mUserlist;
+    private List<UserListItem> mUserlist;
     private View mPopupView;
 
     private static LoginFragment mInstance;
@@ -84,6 +86,17 @@ import java.util.List;
         }
     }
 
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        ((MainActivity)this.getActivity()).registerMyTouchListener(mTouchListener);
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        ((MainActivity)this.getActivity()).unRegisterMyTouchListener(mTouchListener);
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -119,7 +132,7 @@ import java.util.List;
         if(!bmp.isRecycled())
             bmp.recycle();
 
-        mUserlist = new ArrayList<User>();
+        mUserlist = new ArrayList<UserListItem>();
 
         initUsers();
         initPopupWindow();
@@ -153,8 +166,9 @@ import java.util.List;
 
         @Override
         public void onClick(View v) {
-
-            mListener.onLogin();
+            String email = mUsername.getText().toString();
+            String password = mPassword.getText().toString();
+            mListener.onLogin(email,password);
 //            User user = new User();
 //            user.setImagePath("");
 //            user.setUsername("Mike");
@@ -204,7 +218,7 @@ import java.util.List;
             String json = (String)savedSearches.getAll().get(tags.get(i));
             try {
                 JSONObject obj = new JSONObject(json);
-                mUserlist.add(new User(obj.getString("path"), obj.getString("username")));
+                mUserlist.add(new UserListItem(obj.getString("path"), obj.getString("username")));
             } catch (JSONException e) {
                 e.printStackTrace();
             }
@@ -219,4 +233,15 @@ import java.util.List;
     }
 
     public void setSavedSearches(SharedPreferences savedSearches){ this.savedSearches = savedSearches;}
+
+    private MainActivity.MyTouchListener mTouchListener = new MainActivity.MyTouchListener() {
+        @Override
+        public void onTouchEvent(MotionEvent event) {
+            // TODO Auto-generated method stub
+            if(event.getAction() == MotionEvent.ACTION_UP){
+                InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(getActivity().INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(getActivity().getCurrentFocus().getWindowToken(), 0);
+            }
+        }
+    };
 }

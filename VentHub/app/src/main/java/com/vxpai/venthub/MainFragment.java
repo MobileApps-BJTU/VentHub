@@ -47,6 +47,7 @@ public class MainFragment extends Fragment {
     private OnFragmentInteractionListener mListener;
 
     private int mScreenWidth;
+    private SlidingMenu menu;
 
     private MainFragment() {
         // Required empty public constructor
@@ -87,21 +88,24 @@ public class MainFragment extends Fragment {
 
         mScreenWidth = ScreenUtils.getScreenWidth(getActivity());
 
-        // configure the SlidingMenu
-        SlidingMenu menu = new SlidingMenu(getActivity());
-        menu.setMode(SlidingMenu.LEFT);
-        // 设置触摸屏幕的模式
-        menu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
-        // 设置渐入渐出效果的值
-        menu.setFadeDegree(0.35f);
-        menu.setBehindWidth(mScreenWidth / 5 * 4);
-        /**
-         * SLIDING_WINDOW will include the Title/ActionBar in the content
-         * section of the SlidingMenu, while SLIDING_CONTENT does not.
-         */
-        menu.attachToActivity(getActivity(), SlidingMenu.SLIDING_CONTENT);
-        //为侧滑菜单设置布局
-        menu.setMenu(R.layout.menu_layout);
+        if(menu == null){
+            // configure the SlidingMenu
+            menu = new SlidingMenu(getActivity());
+            menu.setMode(SlidingMenu.LEFT);
+            // 设置触摸屏幕的模式
+            menu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
+            // 设置渐入渐出效果的值
+            menu.setFadeDegree(0.35f);
+            menu.setBehindWidth(mScreenWidth / 5 * 4);
+            /**
+             * SLIDING_WINDOW will include the Title/ActionBar in the content
+             * section of the SlidingMenu, while SLIDING_CONTENT does not.
+             */
+            menu.attachToActivity(getActivity(), SlidingMenu.SLIDING_CONTENT);
+            //为侧滑菜单设置布局
+            menu.setMenu(R.layout.menu_layout);
+            menu.showContent(false);
+        }
     }
 
     @Override
@@ -254,4 +258,6 @@ public class MainFragment extends Fragment {
     };
 
     public void setWhetherExit(boolean whetherExit){ this.whetherExit = whetherExit; }
+
+    public void setContentVisibility(boolean isShowing){ menu.showContent(isShowing);}
 }

@@ -11,7 +11,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.vxpai.entity.User;
+import com.vxpai.entity.UserListItem;
 import com.vxpai.utils.ImageUtil;
 import com.vxpai.venthub.R;
 
@@ -23,12 +23,12 @@ import java.util.List;
 public class LoggedonUserAdapter extends BaseAdapter {
 
     private LayoutInflater inflater;
-    private List<User> userList;
+    private List<UserListItem> userList;
     private Context mContext;
 
     private LruCache<String, Bitmap> mLruCache;
 
-    public LoggedonUserAdapter(Context context, List<User> userList){
+    public LoggedonUserAdapter(Context context, List<UserListItem> userList){
         this.mContext = context;
         this.inflater = LayoutInflater.from(context);
         this.userList = userList;
@@ -51,7 +51,7 @@ public class LoggedonUserAdapter extends BaseAdapter {
     }
 
     @Override
-    public User getItem(int position) {
+    public UserListItem getItem(int position) {
         return userList.get(position);
     }
 

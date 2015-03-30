@@ -3,7 +3,7 @@
     android:layout_width="match_parent" android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="@dimen/personal_menu_padding"
-    android:background="@drawable/menu">
+    android:background="@drawable/xixi">
 
     <LinearLayout
         android:orientation="horizontal"
@@ -65,7 +65,7 @@
             <ImageView
                 android:layout_width="0dp"
                 android:layout_height="fill_parent"
-                android:id="@+id/imageView3"
+                android:id="@+id/id_edit_personal_data"
                 android:layout_weight="1"
                 android:src="@drawable/right" />
         </LinearLayout>

@@ -48,4 +48,4 @@ the Action Bar enabled overlaying application content.
                android:layout_height="wrap_content"
                android:layout_below="@id/abs__action_bar_container" />
 </RelativeLayout>
-<!-- From: file:/E:/Procedures/git/VentHub/libraries/actionbarsherlock_library/res/layout-xlarge/abs__screen_action_bar_overlay.xml -->
+<!-- From: file:/Users/KunKun/eclipse%20workspace/VentHub/VentHub/libraries/actionbarsherlock_library/res/layout-xlarge/abs__screen_action_bar_overlay.xml -->
