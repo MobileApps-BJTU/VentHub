@@ -103,6 +103,12 @@ import java.util.List;
     }
 
     @Override
+    public void onResume() {
+        super.onResume();
+        ((MainActivity)this.getActivity()).registerMyTouchListener(mTouchListener);
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
@@ -110,7 +116,6 @@ import java.util.List;
         {
             rootView = inflater.inflate(R.layout.login_fragment, container, false);
             initViews(rootView);
-            ((MainActivity)this.getActivity()).registerMyTouchListener(mTouchListener);
         }
         ViewGroup parent = (ViewGroup) rootView.getParent();
         if (parent != null)
