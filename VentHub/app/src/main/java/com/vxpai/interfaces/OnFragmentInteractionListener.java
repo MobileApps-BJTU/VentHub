@@ -20,4 +20,6 @@ public interface OnFragmentInteractionListener {
     public void onGoBackToLogin();
 
     public void onEditPersonalData();
+
+    public void onSendVent(String vent, boolean isAnnoy);
 }

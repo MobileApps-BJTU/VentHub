@@ -140,6 +140,7 @@ public class MainActivity extends Activity implements OnFragmentInteractionListe
                         SharedPreferences.Editor editor = savedSearches.edit();
                         editor.putString("email", fEmail);
                         editor.putString("password", fPassword);
+
                         fm.beginTransaction().replace(R.id.container, MainFragment.getInstance()).commit();
                     } else {
                         Looper.prepare();
@@ -154,8 +155,50 @@ public class MainActivity extends Activity implements OnFragmentInteractionListe
         }).start();
     }
 
+    @Override
+    public void onSendVent(String vent, boolean isAnnoy) {
+        MainFragment.getInstance().setWhetherExit(true);
+        final String fVent = vent;
+        final String fEmail = savedSearches.getString("email", null);
+        final String fPassword = savedSearches.getString("password", null);
+        final boolean fAnnoy = isAnnoy;
 
-        @Override
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                List<NameValuePair> pairList = new ArrayList<NameValuePair>();
+                pairList.add(new BasicNameValuePair("content", fVent));
+                pairList.add(new BasicNameValuePair("isannoy", fAnnoy?"YES":"NO"));
+                pairList.add(new BasicNameValuePair("email", fEmail));
+                pairList.add(new BasicNameValuePair("password", fPassword));
+
+                JSONObject json = HttpUtil.Post("http://tucao.vxpai.com/postcontent", pairList);
+                try {
+                    int status = json.getInt("status");
+                    if (status == 0) {
+                        fm.beginTransaction().replace(R.id.container, MainFragment.getInstance()).commit();
+
+                        Looper.prepare();
+                        Toast.makeText(MainActivity.this, getString(R.string.send_success), Toast.LENGTH_LONG).show();
+                        Looper.loop();
+                    } else {
+                        savedSearches.edit().remove("email");
+                        savedSearches.edit().remove("password");
+
+                        fm.beginTransaction().replace(R.id.container, LoginFragment.getInstance()).commit();
+
+                        Looper.prepare();
+                        Toast.makeText(MainActivity.this, getString(R.string.wrong_email_password), Toast.LENGTH_LONG).show();
+                        Looper.loop();
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }).start();
+    }
+
+    @Override
     public void onShowDetailShits(ShitListItem shit) {
         //MainFragment.getInstance().setWhetherExit(false);
         DetailShitsFragment.getInstance().setDetailShit(shit);

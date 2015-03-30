@@ -39,4 +39,5 @@
     <string name="back_to_shitlist">吐槽列表</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="wrong_email_password">用户名或密码错误</string>
+    <string name="send_success">发表成功</string>
 </resources>
