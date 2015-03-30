@@ -45,6 +45,10 @@
 				</property>  
 			</bean>  
 		</mvc:interceptor>  
+		<mvc:interceptor>
+			<mvc:mapping path="/register" />
+			<bean class="com.vxpai.tucao.interceptors.RegisterCheckInterceptor" />
+		</mvc:interceptor>
 	</mvc:interceptors>
 	
 </beans>
