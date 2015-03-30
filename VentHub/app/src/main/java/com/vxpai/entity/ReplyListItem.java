@@ -5,29 +5,30 @@ package com.vxpai.entity;
  */
 public class ReplyListItem {
 
-    private String replyFrom;
-    private String replyTo;
+    private UserData replyFrom;
+    private UserData replyTo;
     private String replyDetail;
+    private String replyTime;
 
-    public ReplyListItem(String replyFrom, String replyTo, String replyDetail) {
+    public ReplyListItem(UserData replyFrom, UserData replyTo, String replyDetail) {
         this.replyFrom = replyFrom;
         this.replyTo = replyTo;
         this.replyDetail = replyDetail;
     }
 
-    public String getReplyFrom() {
+    public UserData getReplyFrom() {
         return replyFrom;
     }
 
-    public void setReplyFrom(String replyFrom) {
+    public void setReplyFrom(UserData replyFrom) {
         this.replyFrom = replyFrom;
     }
 
-    public String getReplyTo() {
+    public UserData getReplyTo() {
         return replyTo;
     }
 
-    public void setReplyTo(String replyTo) {
+    public void setReplyTo(UserData replyTo) {
         this.replyTo = replyTo;
     }
 
@@ -37,5 +38,13 @@ public class ReplyListItem {
 
     public void setReplyDetail(String replyDetail) {
         this.replyDetail = replyDetail;
+    }
+
+    public String getReplyTime() {
+        return replyTime;
+    }
+
+    public void setReplyTime(String replyTime) {
+        this.replyTime = replyTime;
     }
 }

@@ -74,7 +74,7 @@
     <GridView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/gridView"
+        android:id="@+id/id_image_container"
         android:padding="@dimen/login_padding"
         android:stretchMode="columnWidth"
         android:verticalSpacing="3dp"
@@ -103,14 +103,14 @@
             <ImageView
                 android:layout_width="0dp"
                 android:layout_height="fill_parent"
-                android:id="@+id/imageView15"
+                android:id="@+id/id_praise_the_shit"
                 android:layout_weight="1"
                 android:src="@drawable/vent" />
 
             <ImageView
                 android:layout_width="0dp"
                 android:layout_height="fill_parent"
-                android:id="@+id/imageView16"
+                android:id="@+id/id_comment_the_shit"
                 android:layout_weight="1"
                 android:src="@drawable/navigation"
                 android:layout_marginLeft="20dp" />
@@ -138,33 +138,12 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView28"
+                android:id="@+id/id_praise_num_detail_shits"
                 android:layout_weight="10"
                 android:textSize="@dimen/text_size"
                 android:text="1000" />
         </LinearLayout>
 
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="fill_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1">
-
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="fill_parent"
-                android:id="@+id/imageView19"
-                android:src="@drawable/anonymous"
-                android:layout_weight="1" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/textView29"
-                android:layout_weight="10"
-                android:textSize="@dimen/text_size"
-                android:text="1万" />
-        </LinearLayout>
     </LinearLayout>
 
 </LinearLayout>

@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.vxpai.interfaces.OnFragmentInteractionListener;
@@ -24,7 +25,7 @@ public class PersonalFragment extends Fragment {
     private static PersonalFragment mInstance;
     private View rootView;
 
-    private ImageView editPersonalData;
+    private LinearLayout editPersonalData;
 
 
     public PersonalFragment() {
@@ -64,7 +65,7 @@ public class PersonalFragment extends Fragment {
         if (rootView == null)
         {
             rootView = inflater.inflate(R.layout.personal_menu, container, false);
-            editPersonalData = (ImageView)rootView.findViewById(R.id.id_edit_personal_data);
+            editPersonalData = (LinearLayout)rootView.findViewById(R.id.id_edit_personal_data);
             editPersonalData.setOnClickListener(editPersonalDataListener);
         }
         ViewGroup parent = (ViewGroup) rootView.getParent();

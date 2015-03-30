@@ -7,34 +7,24 @@ import java.util.List;
  */
 public class CommentListItem {
 
-    private String headImgPath;
-    private String nickName;
+    private UserData userData;
     private String commentTime;
     private String commentDetail;
     private List<ReplyListItem> replyList;
 
-    public CommentListItem(String headImgPath, String nickName, String commentDetail, List<ReplyListItem> replyList, String commentTime) {
-        this.headImgPath = headImgPath;
-        this.nickName = nickName;
+    public CommentListItem(UserData userData, String commentDetail, List<ReplyListItem> replyList, String commentTime) {
+        this.userData = userData;
         this.commentDetail = commentDetail;
         this.replyList = replyList;
         this.commentTime = commentTime;
     }
 
-    public String getHeadImgPath() {
-        return headImgPath;
+    public UserData getUserData() {
+        return userData;
     }
 
-    public void setHeadImgPath(String headImgPath) {
-        this.headImgPath = headImgPath;
-    }
-
-    public String getNickName() {
-        return nickName;
-    }
-
-    public void setNickName(String nickName) {
-        this.nickName = nickName;
+    public void setUserData(UserData userData) {
+        this.userData = userData;
     }
 
     public String getCommentTime() {

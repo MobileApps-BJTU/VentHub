@@ -5,23 +5,17 @@ package com.vxpai.entity;
  */
 public class UserListItem {
 
-    private String imagePath;
-    private String username;
+    private UserData userData;
 
-    public UserListItem(){
-
+    public UserListItem(UserData userData) {
+        this.userData = userData;
     }
 
-    public UserListItem(String imagePath, String username){
-        this.imagePath = imagePath;
-        this.username = username;
+    public UserData getUserData() {
+        return userData;
     }
 
-    public String getImagePath(){ return imagePath; }
-
-    public void setImagePath(String imagePath){ this.imagePath = imagePath; }
-
-    public String getUsername(){ return username; }
-
-    public void setUsername(String username){ this.username = username; }
+    public void setUserData(UserData userData) {
+        this.userData = userData;
+    }
 }

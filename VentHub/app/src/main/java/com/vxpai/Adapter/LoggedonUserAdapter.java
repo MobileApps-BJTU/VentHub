@@ -84,7 +84,7 @@ public class LoggedonUserAdapter extends BaseAdapter {
                 bmp.recycle();
         }
 
-        username.setText(userList.get(position).getUsername());
+        username.setText(userList.get(position).getUserData().getEmail());
         deleteUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

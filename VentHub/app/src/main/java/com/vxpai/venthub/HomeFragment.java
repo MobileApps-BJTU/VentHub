@@ -80,6 +80,10 @@ public class HomeFragment extends Fragment {
             mFriendSquare.setOnClickListener(friendSquareListener);
             mTopList.setOnClickListener(topListListener);
             mAnonymitySquare.setOnClickListener(anonymitySquareListener);
+
+            FragmentTransaction ft = fm.beginTransaction();
+            ft.add(R.id.id_home_container, FriendFragment.getInstance());
+            ft.commit();
         }
         ViewGroup parent = (ViewGroup) rootView.getParent();
         if (parent != null)
@@ -87,35 +91,31 @@ public class HomeFragment extends Fragment {
             parent.removeView(rootView);
         }
 
-        FragmentTransaction ft = fm.beginTransaction();
-        ft.add(R.id.id_home_container, FriendFragment.getInstance());
-        ft.commit();
-
         return rootView;
     }
 
-    @Override
-    public void onDestroy() {
-        if(!whetherExit) {
-            if(isFriendSquareClicked) {
-                FragmentTransaction ft = fm.beginTransaction();
-                ft.remove(FriendFragment.getInstance());
-                ft.commit();
-            }
-            if(isTopListClicked) {
-                FragmentTransaction ft2 = fm.beginTransaction();
-                ft2.remove(TopFragment.getInstance());
-                ft2.commit();
-            }
-            if(isAnonymitySquareClicked) {
-                FragmentTransaction ft3 = fm.beginTransaction();
-                ft3.remove(AnonymityFragment.getInstance());
-                ft3.commit();
-            }
-        }
-
-        super.onDestroy();
-    }
+//    @Override
+//    public void onDestroy() {
+//        if(!whetherExit) {
+//            if(isFriendSquareClicked) {
+//                FragmentTransaction ft = fm.beginTransaction();
+//                ft.remove(FriendFragment.getInstance());
+//                ft.commit();
+//            }
+//            if(isTopListClicked) {
+//                FragmentTransaction ft2 = fm.beginTransaction();
+//                ft2.remove(TopFragment.getInstance());
+//                ft2.commit();
+//            }
+//            if(isAnonymitySquareClicked) {
+//                FragmentTransaction ft3 = fm.beginTransaction();
+//                ft3.remove(AnonymityFragment.getInstance());
+//                ft3.commit();
+//            }
+//        }
+//
+//        super.onDestroy();
+//    }
 
     private View.OnClickListener friendSquareListener = new View.OnClickListener(){
 

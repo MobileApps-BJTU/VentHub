@@ -60,7 +60,7 @@ public class ShitListAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
         View view = inflater.inflate(R.layout.item_shits_content, null);
 
         ImageView headImg = (ImageView)view.findViewById(R.id.id_user_image_shits);
@@ -86,10 +86,10 @@ public class ShitListAdapter extends BaseAdapter {
                 bmp.recycle();
         }
 
-        userName.setText("丿灬樱花笑");
-        dataTime.setText("16:50");
-        praise.setText("500");
-        content.setText("今天要做一个搜索功能，搜索界面采用AutoCompleteTextView做搜索条，然后下面用listview来显示搜索结果，而我的主界面是在底部用tab做了一个主界面导航，其中有一个搜索按钮，因为在搜索条中输入文字的时候会弹出软件盘，但是如果不做什么设置的话，软键盘弹出来的同时，会把我下面的tab导航给相应拉到屏幕的上面，界面显示的扭曲啊，后来找到一种解决方法，在相应的activity中（比如我这是tab的activity，用的是adjustpan）添加");
+        userName.setText(shitListItemList.get(position).getUserData().getUsername());
+        dataTime.setText(shitListItemList.get(position).getTime());
+        praise.setText("" + shitListItemList.get(position).getPraiseNum());
+        content.setText(shitListItemList.get(position).getContent());
 
         return view;
     }

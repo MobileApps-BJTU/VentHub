@@ -43,6 +43,7 @@ public class MainFragment extends Fragment {
     private View rootView;
 
     private boolean whetherExit = false;
+    private boolean isHomePage = true;
 
     private OnFragmentInteractionListener mListener;
 
@@ -138,6 +139,16 @@ public class MainFragment extends Fragment {
 
             mUserName = (TextView)rootView.findViewById(R.id.id_username_show);
             mUserName.setOnClickListener(noUseListener);
+
+            HomeFragment.getInstance().setWhetherExit(true);
+            FragmentTransaction ft = fm.beginTransaction();
+            ft.add(R.id.id_main_container, HomeFragment.getInstance());
+            ft.commit();
+
+            isHomePageClicked = true;
+            isFriendListClicked = false;
+            mHomePageImg.setImageResource(R.drawable.home);
+            mFriendListImg.setImageResource(R.drawable.friend_o);
         }
         ViewGroup parent = (ViewGroup) rootView.getParent();
         if (parent != null)
@@ -145,37 +156,49 @@ public class MainFragment extends Fragment {
             parent.removeView(rootView);
         }
 
-        HomeFragment.getInstance().setWhetherExit(true);
-        FragmentTransaction ft = fm.beginTransaction();
-        ft.add(R.id.id_main_container, HomeFragment.getInstance());
-        ft.commit();
-
-        isHomePageClicked = true;
-        isFriendListClicked = false;
-        mHomePageImg.setImageResource(R.drawable.home);
-        mFriendListImg.setImageResource(R.drawable.friend_o);
+//        if(isHomePage) {
+//            HomeFragment.getInstance().setWhetherExit(true);
+//            FragmentTransaction ft = fm.beginTransaction();
+//            ft.add(R.id.id_main_container, HomeFragment.getInstance());
+//            ft.commit();
+//
+//            isHomePageClicked = true;
+//            isFriendListClicked = false;
+//            mHomePageImg.setImageResource(R.drawable.home);
+//            mFriendListImg.setImageResource(R.drawable.friend_o);
+//        }else{
+//            FriendListFragment.getInstance().setWhetherExit(true);
+//            FragmentTransaction ft = fm.beginTransaction();
+//            ft.add(R.id.id_main_container, FriendListFragment.getInstance());
+//            ft.commit();
+//
+//            isHomePageClicked = false;
+//            isFriendListClicked = true;
+//            mHomePageImg.setImageResource(R.drawable.home_o);
+//            mFriendListImg.setImageResource(R.drawable.friend);
+//        }
 
         return rootView;
     }
 
-    @Override
-    public void onDestroy() {
-        if(!whetherExit) {
-            if(isHomePageClicked) {
-                HomeFragment.getInstance().setWhetherExit(false);
-                FragmentTransaction ft = fm.beginTransaction();
-                ft.remove(HomeFragment.getInstance());
-                ft.commit();
-            }
-            if(isFriendListClicked) {
-                FriendListFragment.getInstance().setWhetherExit(false);
-                FragmentTransaction ft2 = fm.beginTransaction();
-                ft2.remove(FriendListFragment.getInstance());
-                ft2.commit();
-            }
-       }
-        super.onDestroy();
-    }
+//    @Override
+//    public void onDestroy() {
+//        if(!whetherExit) {
+//            if(isHomePageClicked) {
+//                HomeFragment.getInstance().setWhetherExit(false);
+//                FragmentTransaction ft = fm.beginTransaction();
+//                ft.remove(HomeFragment.getInstance());
+//                ft.commit();
+//            }
+//            if(isFriendListClicked) {
+//                FriendListFragment.getInstance().setWhetherExit(false);
+//                FragmentTransaction ft2 = fm.beginTransaction();
+//                ft2.remove(FriendListFragment.getInstance());
+//                ft2.commit();
+//            }
+//       }
+//        super.onDestroy();
+//    }
 
     private View.OnClickListener homePageListener = new View.OnClickListener(){
 
@@ -214,7 +237,10 @@ public class MainFragment extends Fragment {
 //                mSendShitsImg.setImageResource(R.drawable.favourite);
 //                mHomePageImg.setImageResource(R.drawable.home_o);
 //                mFriendListImg.setImageResource(R.drawable.friend_o);
-                mListener.onSendShits();
+                if(isHomePageClicked)
+                    mListener.onSendShits(true);
+                else
+                    mListener.onSendShits(false);
 
             }
         }
@@ -260,4 +286,8 @@ public class MainFragment extends Fragment {
     public void setWhetherExit(boolean whetherExit){ this.whetherExit = whetherExit; }
 
     public void setContentVisibility(boolean isShowing){ menu.showContent(isShowing);}
+
+    public void setHomePage(boolean isHomePage) {
+        this.isHomePage = isHomePage;
+    }
 }

@@ -32,6 +32,7 @@ public class MainActivity extends Activity implements OnFragmentInteractionListe
     private SharedPreferences savedSearches;
     private FragmentManager fm;
     private SlidingMenu slidingMenu;
+    private boolean isHomePage = true;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -98,20 +99,26 @@ public class MainActivity extends Activity implements OnFragmentInteractionListe
     }
 
     @Override
-    public void onSendShits() {
-        MainFragment.getInstance().setWhetherExit(false);
+    public void onSendShits(boolean isHomePage) {
+        this.isHomePage = isHomePage;
+        //MainFragment.getInstance().setWhetherExit(false);
         FragmentTransaction ft = fm.beginTransaction();
-        ft.replace(R.id.container, SendShitsFragment.getInstance());
-        ft.commit();
+        ft.replace(R.id.container, SendShitsFragment.getInstance())
+          .addToBackStack(null)
+          .commit();
     }
 
     @Override
     public void onGoBackToMain() {
-        MainFragment.getInstance().setContentVisibility(true);
-        MainFragment.getInstance().setWhetherExit(true);
-        FragmentTransaction ft = fm.beginTransaction();
-        ft.replace(R.id.container, MainFragment.getInstance());
-        ft.commit();
+//        MainFragment.getInstance().setContentVisibility(true);
+//        MainFragment.getInstance().setWhetherExit(true);
+//        MainFragment.getInstance().setHomePage(isHomePage);
+//        FragmentTransaction ft = fm.beginTransaction();
+//        ft.replace(R.id.container, MainFragment.getInstance());
+//        ft.commit();
+        if (fm.getBackStackEntryCount() > 0) {
+            fm.popBackStack();
+        }
     }
 
     @Override
@@ -150,17 +157,20 @@ public class MainActivity extends Activity implements OnFragmentInteractionListe
 
         @Override
     public void onShowDetailShits(ShitListItem shit) {
-        MainFragment.getInstance().setWhetherExit(false);
+        //MainFragment.getInstance().setWhetherExit(false);
+        DetailShitsFragment.getInstance().setDetailShit(shit);
         FragmentTransaction ft = fm.beginTransaction();
-        ft.replace(R.id.container, DetailShitsFragment.getInstance());
-        ft.commit();
+        ft.replace(R.id.container, DetailShitsFragment.getInstance())
+          .addToBackStack(null)
+          .commit();
     }
 
     @Override
     public void onNewUser() {
         FragmentTransaction ft = fm.beginTransaction();
-        ft.replace(R.id.container, RegisterFragment.getInstance());
-        ft.commit();
+        ft.replace(R.id.container, RegisterFragment.getInstance())
+          .addToBackStack(null)
+          .commit();
     }
 
     @Override

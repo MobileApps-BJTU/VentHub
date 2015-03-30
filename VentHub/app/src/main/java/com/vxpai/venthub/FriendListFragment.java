@@ -10,7 +10,9 @@ import android.widget.ListView;
 
 
 import com.vxpai.Adapter.FriendListAdapter;
-import com.vxpai.entity.FriendListItem;
+import com.vxpai.entity.ShitListItem;
+import com.vxpai.entity.UserData;
+import com.vxpai.entity.UserListItem;
 import com.vxpai.interfaces.OnFragmentInteractionListener;
 
 import java.util.ArrayList;
@@ -56,12 +58,12 @@ public class FriendListFragment extends ListFragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        List<FriendListItem> list = new ArrayList<FriendListItem>();
-        list.add(new FriendListItem("","Mike"));
-        list.add(new FriendListItem("","Ann"));
-        list.add(new FriendListItem("","Peter"));
-        list.add(new FriendListItem("","Paul"));
-        list.add(new FriendListItem("","John"));
+        List<UserListItem> list = new ArrayList<UserListItem>();
+        list.add(new UserListItem(new UserData("Mike@163.com", "Mike", "1234")));
+        list.add(new UserListItem(new UserData("Ann@163.com", "Ann", "1234")));
+        list.add(new UserListItem(new UserData("Paul@163.com", "Paul", "1234")));
+        list.add(new UserListItem(new UserData("Peter@163.com", "Peter", "1234")));
+        list.add(new UserListItem(new UserData("Brown@163.com", "Brown", "1234")));
 
         setListAdapter(new FriendListAdapter(getActivity(),list));
     }

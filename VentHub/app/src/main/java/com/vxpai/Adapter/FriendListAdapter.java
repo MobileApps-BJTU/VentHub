@@ -10,7 +10,9 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.vxpai.entity.FriendListItem;
+import com.vxpai.entity.ShitListItem;
+import com.vxpai.entity.UserData;
+import com.vxpai.entity.UserListItem;
 import com.vxpai.venthub.R;
 
 import java.util.List;
@@ -21,13 +23,13 @@ import java.util.List;
 public class FriendListAdapter extends BaseAdapter {
 
     private LayoutInflater inflater;
-    private List<FriendListItem> friendList;
+    private List<UserListItem> friendList;
     private Context mContext;
 
     private LruCache<String, Bitmap> mLruCache;
     private View rootView;
 
-    public FriendListAdapter(Context context, List<FriendListItem> friendList){
+    public FriendListAdapter(Context context, List<UserListItem> friendList){
         this.inflater = LayoutInflater.from(context);
         this.friendList = friendList;
         this.mContext = context;
@@ -50,7 +52,7 @@ public class FriendListAdapter extends BaseAdapter {
     }
 
     @Override
-    public FriendListItem getItem(int position) {
+    public UserListItem getItem(int position) {
         return friendList.get(position);
     }
 
@@ -67,7 +69,7 @@ public class FriendListAdapter extends BaseAdapter {
         TextView nickName = (TextView)rootView.findViewById(R.id.id_friendlist_username);
         ImageView deleteBtn = (ImageView)rootView.findViewById(R.id.id_friendlist_delete);
 
-        nickName.setText(friendList.get(position).getmNickName());
+        nickName.setText(friendList.get(position).getUserData().getUsername());
 
         return rootView;
     }

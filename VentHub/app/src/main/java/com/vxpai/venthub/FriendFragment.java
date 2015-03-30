@@ -10,7 +10,9 @@ import android.widget.ListView;
 
 
 import com.vxpai.Adapter.ShitListAdapter;
+import com.vxpai.entity.CommentListItem;
 import com.vxpai.entity.ShitListItem;
+import com.vxpai.entity.UserData;
 import com.vxpai.interfaces.OnFragmentInteractionListener;
 
 import java.util.ArrayList;
@@ -56,11 +58,11 @@ public class FriendFragment extends ListFragment {
         super.onCreate(savedInstanceState);
 
         list = new ArrayList<ShitListItem>();
-        list.add(new ShitListItem());
-        list.add(new ShitListItem());
-        list.add(new ShitListItem());
-        list.add(new ShitListItem());
-        list.add(new ShitListItem());
+        list.add(new ShitListItem(new UserData("Mike@163.com", "Mike", "1234"), "测试内容", "17:50", 50, null, new ArrayList<CommentListItem>()));
+        list.add(new ShitListItem(new UserData("Ann@163.com", "Ann", "1234"), "测试内容", "17:50", 50, null, new ArrayList<CommentListItem>()));
+        list.add(new ShitListItem(new UserData("Paul@163.com", "Paul", "1234"), "测试内容", "17:50", 50, null, new ArrayList<CommentListItem>()));
+        list.add(new ShitListItem(new UserData("Peter@163.com", "Peter", "1234"), "测试内容", "17:50", 50, null, new ArrayList<CommentListItem>()));
+        list.add(new ShitListItem(new UserData("Brown@163.com", "Brown", "1234"), "测试内容", "17:50", 50, null, new ArrayList<CommentListItem>()));
 
         setListAdapter(new ShitListAdapter(getActivity(),list));
     }

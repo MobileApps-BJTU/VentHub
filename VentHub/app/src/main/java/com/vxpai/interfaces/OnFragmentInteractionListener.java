@@ -7,7 +7,7 @@ import com.vxpai.entity.ShitListItem;
  */
 public interface OnFragmentInteractionListener {
     // TODO: Update argument type and name
-    public void onSendShits();
+    public void onSendShits(boolean isHomePage);
 
     public void onGoBackToMain();
 

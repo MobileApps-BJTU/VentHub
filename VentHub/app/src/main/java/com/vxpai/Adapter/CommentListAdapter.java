@@ -13,7 +13,6 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.vxpai.entity.CommentListItem;
-import com.vxpai.entity.FriendListItem;
 import com.vxpai.venthub.R;
 
 import java.util.List;
@@ -73,7 +72,7 @@ public class CommentListAdapter extends BaseAdapter {
         ListView replyList = (ListView)view.findViewById(R.id.id_replylist_comment);
 
         // headImg
-        nickName.setText(commentList.get(position).getNickName());
+        nickName.setText(commentList.get(position).getUserData().getUsername());
         commentTime.setText(commentList.get(position).getCommentTime());
         commentDetail.setText(commentList.get(position).getCommentDetail());
 

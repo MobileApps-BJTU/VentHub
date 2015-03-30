@@ -2,6 +2,7 @@ package com.vxpai.venthub;
 
 
 import android.app.Activity;
+import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
@@ -16,6 +17,7 @@ import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -51,6 +53,8 @@ import java.util.List;
     private PopupWindow mPopupWindow;
     private List<UserListItem> mUserlist;
     private View mPopupView;
+
+    private View rootView;
 
     private static LoginFragment mInstance;
     private OnFragmentInteractionListener mListener;
@@ -89,7 +93,7 @@ import java.util.List;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ((MainActivity)this.getActivity()).registerMyTouchListener(mTouchListener);
+
     }
 
     @Override
@@ -101,9 +105,20 @@ import java.util.List;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.login_fragment, container, false);
-        initViews(view);
-        return view;
+
+        if (rootView == null)
+        {
+            rootView = inflater.inflate(R.layout.login_fragment, container, false);
+            initViews(rootView);
+            ((MainActivity)this.getActivity()).registerMyTouchListener(mTouchListener);
+        }
+        ViewGroup parent = (ViewGroup) rootView.getParent();
+        if (parent != null)
+        {
+            parent.removeView(rootView);
+        }
+
+        return rootView;
     }
 
     private void initViews(View view){
@@ -134,7 +149,7 @@ import java.util.List;
 
         mUserlist = new ArrayList<UserListItem>();
 
-        initUsers();
+        //initUsers();
         initPopupWindow();
     }
 
@@ -212,18 +227,18 @@ import java.util.List;
         }
     };
 
-    private void initUsers(){
-        List<String> tags = new ArrayList<String>(savedSearches.getAll().keySet());
-        for(int i = 0;i < tags.size();i++){
-            String json = (String)savedSearches.getAll().get(tags.get(i));
-            try {
-                JSONObject obj = new JSONObject(json);
-                mUserlist.add(new UserListItem(obj.getString("path"), obj.getString("username")));
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-        }
-    }
+//    private void initUsers(){
+//        List<String> tags = new ArrayList<String>(savedSearches.getAll().keySet());
+//        for(int i = 0;i < tags.size();i++){
+//            String json = (String)savedSearches.getAll().get(tags.get(i));
+//            try {
+//                JSONObject obj = new JSONObject(json);
+//                mUserlist.add(new UserListItem(obj.getString("path"), obj.getString("username")));
+//            } catch (JSONException e) {
+//                e.printStackTrace();
+//            }
+//        }
+//    }
 
     private void initPopupWindow(){
         LayoutInflater layoutInflater = (LayoutInflater) getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
