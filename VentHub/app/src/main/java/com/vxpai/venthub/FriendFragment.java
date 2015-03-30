@@ -6,11 +6,15 @@ import android.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 
-import com.vxpai.venthub.dummy.DummyContent;
+import com.vxpai.Adapter.ShitListAdapter;
+import com.vxpai.entity.ShitListItem;
+import com.vxpai.interfaces.OnFragmentInteractionListener;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A fragment representing a list of Items.
@@ -22,29 +26,58 @@ import com.vxpai.venthub.dummy.DummyContent;
 public class FriendFragment extends ListFragment {
 
     private OnFragmentInteractionListener mListener;
+    private View rootView;
+    private List<ShitListItem> list = new ArrayList<ShitListItem>();
 
-    /**
-     * Mandatory empty constructor for the fragment manager to instantiate the
-     * fragment (e.g. upon screen orientation changes).
-     */
-    public FriendFragment() {
+    private static FriendFragment mInstance;
+
+    private FriendFragment() {
+        // Required empty public constructor
+    }
+
+    public static FriendFragment getInstance()
+    {
+
+        if (mInstance == null)
+        {
+            synchronized (FriendFragment.class)
+            {
+                if (mInstance == null)
+                {
+                    mInstance = new FriendFragment();
+                }
+            }
+        }
+        return mInstance;
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        list = new ArrayList<ShitListItem>();
+        list.add(new ShitListItem());
+        list.add(new ShitListItem());
+        list.add(new ShitListItem());
+        list.add(new ShitListItem());
+        list.add(new ShitListItem());
 
-        // TODO: Change Adapter to display your content
-        setListAdapter(new ArrayAdapter<DummyContent.DummyItem>(getActivity(),
-                android.R.layout.simple_list_item_1, android.R.id.text1, DummyContent.ITEMS));
+        setListAdapter(new ShitListAdapter(getActivity(),list));
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.friend_fragment,container,false);
-
-        return view;
+        if (rootView == null)
+        {
+            rootView = inflater.inflate(R.layout.friend_fragment,container,false);
+        }
+        // 缓存的rootView需要判断是否已经被加过parent，如果有parent需要从parent删除，要不然会发生这个rootview已经有parent的错误。
+        ViewGroup parent = (ViewGroup) rootView.getParent();
+        if (parent != null)
+        {
+            parent.removeView(rootView);
+        }
+        return rootView;
     }
 
     @Override
@@ -64,16 +97,18 @@ public class FriendFragment extends ListFragment {
         mListener = null;
     }
 
-
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
         super.onListItemClick(l, v, position, id);
 
         if (null != mListener) {
-            // Notify the active callbacks interface (the activity, if the
-            // fragment is attached to one) that an item has been selected.
-            mListener.onFragmentInteraction(DummyContent.ITEMS.get(position).id);
+            mListener.onShowDetailShits(list.get(position));
         }
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
     }
 
     /**
@@ -86,9 +121,4 @@ public class FriendFragment extends ListFragment {
      * "http://developer.android.com/training/basics/fragments/communicating.html"
      * >Communicating with Other Fragments</a> for more information.
      */
-    public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-        public void onFragmentInteraction(String id);
-    }
-
 }

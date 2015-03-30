@@ -28,7 +28,8 @@
                 android:id="@+id/id_user_image"
                 android:layout_gravity="center"
                 android:adjustViewBounds="true"
-                android:layout_weight="3" />
+                android:layout_weight="3"
+                android:src="@drawable/head" />
 
             <TextView
                 android:layout_width="fill_parent"
@@ -139,7 +140,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/register"
+                android:text="@string/newuser"
                 android:id="@+id/id_new_user"
                 android:layout_centerVertical="true"
                 android:layout_toLeftOf="@+id/id_split"

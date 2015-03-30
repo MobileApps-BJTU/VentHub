@@ -8,19 +8,20 @@
         android:layout_width="fill_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:background="#ff2bff30"
+        android:background="@color/main_color"
         android:id="@+id/id_top_bar">
 
         <FrameLayout
             android:layout_width="0dp"
             android:layout_height="fill_parent"
             android:layout_weight="1"
-            android:padding="10dp">
+            android:padding="10dp"
+            android:id="@+id/id_user_menu">
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/id_user_menu"
+                android:id="@+id/id_user_menu_image"
                 android:layout_gravity="center"
                 android:adjustViewBounds="true" />
         </FrameLayout>
@@ -28,11 +29,12 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="fill_parent"
-            android:text="New Text"
+            android:text="丿灬樱花笑"
             android:id="@+id/id_username_show"
             android:layout_weight="4"
             android:gravity="center"
-            android:textSize="@dimen/text_size" />
+            android:textSize="@dimen/text_size"
+            android:textColor="#ffffffff" />
 
         <FrameLayout
             android:layout_width="0dp"
@@ -55,38 +57,44 @@
         android:layout_width="fill_parent"
         android:layout_height="0dp"
         android:layout_weight="8"
-        android:id="@+id/id_main_container"></LinearLayout>
+        android:id="@+id/id_main_container"
+        android:background="#ffffffff"></LinearLayout>
 
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="fill_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:background="#ffff6a1b"
-        android:id="@+id/id_footbar">
+        android:background="#ffffffff"
+        android:id="@+id/id_footbar"
+        android:padding="5dp">
 
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="0dp"
             android:layout_height="fill_parent"
             android:layout_weight="1"
-            android:padding="5dp"
-            android:id="@+id/id_friend_menu">
+            android:id="@+id/id_home_page">
 
             <ImageView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/imageView"
+                android:layout_height="0dp"
+                android:id="@+id/id_home_page_img"
                 android:layout_gravity="center_horizontal"
-                android:adjustViewBounds="true" />
+                android:adjustViewBounds="true"
+                android:src="@drawable/home"
+                android:layout_weight="2" />
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/friend"
+                android:layout_height="0dp"
+                android:text="@string/home"
                 android:id="@+id/textView"
                 android:layout_gravity="center_horizontal"
-                android:textSize="@dimen/footbar_text_size" />
+                android:textSize="@dimen/footbar_text_size"
+                android:layout_weight="1"
+                android:textStyle="bold"
+                android:textColor="#ffd55b44" />
         </LinearLayout>
 
         <LinearLayout
@@ -94,22 +102,17 @@
             android:layout_width="0dp"
             android:layout_height="fill_parent"
             android:layout_weight="1"
-            android:padding="5dp"
-            android:id="@+id/id_top_menu">
+            android:id="@+id/id_send_shits">
 
             <ImageView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/imageView2"
-                android:layout_gravity="center_horizontal" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/hot_board"
-                android:id="@+id/textView2"
+                android:layout_height="fill_parent"
+                android:id="@+id/id_send_shits_img"
                 android:layout_gravity="center_horizontal"
-                android:textSize="@dimen/footbar_text_size" />
+                android:adjustViewBounds="true"
+                android:src="@drawable/new_vent"
+                android:focusableInTouchMode="false" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -117,22 +120,26 @@
             android:layout_width="0dp"
             android:layout_height="fill_parent"
             android:layout_weight="1"
-            android:padding="5dp"
-            android:id="@+id/id_anonymity_menu">
+            android:id="@+id/id_friend_list">
 
             <ImageView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/imageView3"
-                android:layout_gravity="center_horizontal" />
+                android:layout_height="0dp"
+                android:id="@+id/id_friend_list_img"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="2"
+                android:src="@drawable/friend_o" />
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/anonymity"
+                android:layout_height="0dp"
+                android:text="@string/friend"
                 android:id="@+id/textView3"
                 android:layout_gravity="center_horizontal"
-                android:textSize="@dimen/footbar_text_size" />
+                android:textSize="@dimen/footbar_text_size"
+                android:layout_weight="1"
+                android:textStyle="bold"
+                android:textColor="#ffd55b44" />
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

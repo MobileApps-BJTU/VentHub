@@ -1,6 +1,7 @@
 package com.vxpai.venthub;
 
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
@@ -8,7 +9,6 @@ import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.app.Fragment;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,8 +21,9 @@ import android.widget.PopupWindow;
 import android.widget.TextView;
 
 import com.vxpai.entity.User;
+import com.vxpai.interfaces.OnFragmentInteractionListener;
 import com.vxpai.utils.ImageUtil;
-import com.vxpai.utils.LoggedonUserAdapter;
+import com.vxpai.Adapter.LoggedonUserAdapter;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -50,6 +51,7 @@ import java.util.List;
     private View mPopupView;
 
     private static LoginFragment mInstance;
+    private OnFragmentInteractionListener mListener;
 
     private LoginFragment() {
         // Required empty public constructor
@@ -69,6 +71,17 @@ import java.util.List;
             }
         }
         return mInstance;
+    }
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        try {
+            mListener = (OnFragmentInteractionListener) activity;
+        } catch (ClassCastException e) {
+            throw new ClassCastException(activity.toString()
+                    + " must implement OnFragmentInteractionListener");
+        }
     }
 
 
@@ -140,30 +153,32 @@ import java.util.List;
 
         @Override
         public void onClick(View v) {
-            User user = new User();
-            user.setImagePath("");
-            user.setUsername("Mike");
 
-            JSONObject obj = new JSONObject();
-            try {
-                obj.put("path", user.getImagePath());
-                obj.put("username", user.getUsername());
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-
-            SharedPreferences.Editor preferencesEditor = savedSearches.edit();
-            preferencesEditor.putString("user1", obj.toString()); // store current search
-            preferencesEditor.putString("user2", obj.toString()); // store current search
-            preferencesEditor.putString("user3", obj.toString()); // store current search
-            preferencesEditor.putString("user4", obj.toString()); // store current search
-            preferencesEditor.putString("user5", obj.toString()); // store current search
-            preferencesEditor.putString("user6", obj.toString()); // store current search
-            preferencesEditor.putString("user7", obj.toString()); // store current search
-            preferencesEditor.putString("user8", obj.toString()); // store current search
-            preferencesEditor.putString("user9", obj.toString()); // store current search
-            preferencesEditor.putString("user10", obj.toString()); // store current search
-            preferencesEditor.apply(); // store the updated preferences
+            mListener.onLogin();
+//            User user = new User();
+//            user.setImagePath("");
+//            user.setUsername("Mike");
+//
+//            JSONObject obj = new JSONObject();
+//            try {
+//                obj.put("path", user.getImagePath());
+//                obj.put("username", user.getUsername());
+//            } catch (JSONException e) {
+//                e.printStackTrace();
+//            }
+//
+//            SharedPreferences.Editor preferencesEditor = savedSearches.edit();
+//            preferencesEditor.putString("user1", obj.toString()); // store current search
+//            preferencesEditor.putString("user2", obj.toString()); // store current search
+//            preferencesEditor.putString("user3", obj.toString()); // store current search
+//            preferencesEditor.putString("user4", obj.toString()); // store current search
+//            preferencesEditor.putString("user5", obj.toString()); // store current search
+//            preferencesEditor.putString("user6", obj.toString()); // store current search
+//            preferencesEditor.putString("user7", obj.toString()); // store current search
+//            preferencesEditor.putString("user8", obj.toString()); // store current search
+//            preferencesEditor.putString("user9", obj.toString()); // store current search
+//            preferencesEditor.putString("user10", obj.toString()); // store current search
+//            preferencesEditor.apply(); // store the updated preferences
         }
     };
 
@@ -171,7 +186,7 @@ import java.util.List;
 
         @Override
         public void onClick(View v) {
-
+            mListener.onNewUser();
         }
     };
 
