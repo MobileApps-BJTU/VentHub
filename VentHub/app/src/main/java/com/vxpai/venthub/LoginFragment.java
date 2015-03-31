@@ -194,7 +194,12 @@ import java.util.List;
         public void onClick(View v) {
             String email = mUsername.getText().toString();
             String password = mPassword.getText().toString();
-            mListener.onLogin(email,password);
+            if(email.equals(""))
+                Toast.makeText(getActivity(), getString(R.string.no_email), Toast.LENGTH_LONG).show();
+            else if(password.equals(""))
+                Toast.makeText(getActivity(), getString(R.string.no_pwd), Toast.LENGTH_LONG).show();
+            else
+                mListener.onLogin(email,password);
 //            User user = new User();
 //            user.setImagePath("");
 //            user.setUsername("Mike");

@@ -52,13 +52,13 @@
                 android:orientation="horizontal"
                 android:layout_width="fill_parent"
                 android:layout_height="0dp"
-                android:layout_weight="1"></LinearLayout>
+                android:layout_weight="0.5"></LinearLayout>
 
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="fill_parent"
                 android:layout_height="0dp"
-                android:layout_weight="1">
+                android:layout_weight="0.8">
 
                 <TextView
                     android:layout_width="0dp"
@@ -87,13 +87,13 @@
                 android:orientation="horizontal"
                 android:layout_width="fill_parent"
                 android:layout_height="0dp"
-                android:layout_weight="1"></LinearLayout>
+                android:layout_weight="0.5"></LinearLayout>
 
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="fill_parent"
                 android:layout_height="0dp"
-                android:layout_weight="1">
+                android:layout_weight="0.8">
 
                 <TextView
                     android:layout_width="0dp"
@@ -120,13 +120,13 @@
                 android:orientation="horizontal"
                 android:layout_width="fill_parent"
                 android:layout_height="0dp"
-                android:layout_weight="1"></LinearLayout>
+                android:layout_weight="0.5"></LinearLayout>
 
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="fill_parent"
                 android:layout_height="0dp"
-                android:layout_weight="1">
+                android:layout_weight="0.8">
 
                 <TextView
                     android:layout_width="0dp"
@@ -154,13 +154,13 @@
                 android:orientation="horizontal"
                 android:layout_width="fill_parent"
                 android:layout_height="0dp"
-                android:layout_weight="1"></LinearLayout>
+                android:layout_weight="0.5"></LinearLayout>
 
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="fill_parent"
                 android:layout_height="0dp"
-                android:layout_weight="1">
+                android:layout_weight="0.8">
 
                 <TextView
                     android:layout_width="0dp"
@@ -195,7 +195,7 @@
                 android:layout_height="0dp"
                 android:text="@string/register_btn"
                 android:id="@+id/id_register"
-                android:layout_weight="1"
+                android:layout_weight="0.9"
                 android:background="@drawable/button_selector"
                 android:textSize="@dimen/text_size"
                 android:textStyle="bold"
