@@ -104,14 +104,13 @@ public class FriendFragment extends ListFragment {
                 for(int i = 0;i < json.length();i++){
                     try {
                         JSONObject obj = new JSONObject(json.get(i).toString());
-                        list.add(new ShitListItem(new UserData(obj.getString("email"), obj.getString("username"), null), obj.getString("content"), new Timestamp(obj.getLong("posttime")).toString(), obj.getInt("approveNum"), null, new ArrayList<CommentListItem>()));
+                        if(obj.getString("isannoy").equals("NO")) {
+                            list.add(new ShitListItem(new UserData(obj.getString("email"), obj.getString("username"), null), obj.getString("content"), new Timestamp(obj.getLong("posttime")).toString(), obj.getInt("approveNum"), obj.getInt("cid"), null, new ArrayList<CommentListItem>()));
+                        }
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
                 }
-
-
-
             }
         });
         tt.start();
@@ -185,7 +184,9 @@ public class FriendFragment extends ListFragment {
                 for(int i = 0;i < json.length();i++){
                     try {
                         JSONObject obj = new JSONObject(json.get(i).toString());
-                        list.add(new ShitListItem(new UserData(obj.getString("email"), obj.getString("username"), null), obj.getString("content"), new Timestamp(obj.getLong("posttime")).toString(), obj.getInt("approveNum"), null, new ArrayList<CommentListItem>()));
+                        if(obj.getString("isannoy").equals("NO")) {
+                            list.add(new ShitListItem(new UserData(obj.getString("email"), obj.getString("username"), null), obj.getString("content"), new Timestamp(obj.getLong("posttime")).toString(), obj.getInt("approveNum"), obj.getInt("cid"), null, new ArrayList<CommentListItem>()));
+                        }
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }

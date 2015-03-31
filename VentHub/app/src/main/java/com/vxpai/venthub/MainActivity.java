@@ -119,6 +119,7 @@ public class MainActivity extends Activity implements OnFragmentInteractionListe
 //        FragmentTransaction ft = fm.beginTransaction();
 //        ft.replace(R.id.container, MainFragment.getInstance());
 //        ft.commit();
+        FriendFragment.getInstance().refresh();
         if (fm.getBackStackEntryCount() > 0) {
             fm.popBackStack();
         }
@@ -248,6 +249,7 @@ public class MainActivity extends Activity implements OnFragmentInteractionListe
     @Override
     public void onShowDetailShits(ShitListItem shit) {
         //MainFragment.getInstance().setWhetherExit(false);
+        DetailShitsFragment.getInstance().setSavedSearches(savedSearches);
         DetailShitsFragment.getInstance().setDetailShit(shit);
         FragmentTransaction ft = fm.beginTransaction();
         ft.replace(R.id.container, DetailShitsFragment.getInstance())
@@ -274,12 +276,16 @@ public class MainActivity extends Activity implements OnFragmentInteractionListe
     }
 
     @Override
-    public void onGoBackToLogin() {
-//        FragmentTransaction ft = fm.beginTransaction();
-//        ft.replace(R.id.container, LoginFragment.getInstance());
-//        ft.commit();
-        if (fm.getBackStackEntryCount() > 0) {
-            fm.popBackStack();
+    public void onGoBackToLogin(boolean isUserDataWrong) {
+
+        if(isUserDataWrong){
+            FragmentTransaction ft = fm.beginTransaction();
+            ft.replace(R.id.container, LoginFragment.getInstance());
+            ft.commit();
+        }else {
+            if (fm.getBackStackEntryCount() > 0) {
+                fm.popBackStack();
+            }
         }
     }
 

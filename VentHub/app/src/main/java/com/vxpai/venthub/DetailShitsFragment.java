@@ -3,6 +3,7 @@ package com.vxpai.venthub;
 
 import android.app.Activity;
 import android.app.FragmentManager;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -16,11 +17,26 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.vxpai.Adapter.CommentListAdapter;
+import com.vxpai.entity.CommentListItem;
 import com.vxpai.entity.ShitListItem;
+import com.vxpai.entity.UserData;
 import com.vxpai.interfaces.OnFragmentInteractionListener;
+import com.vxpai.utils.HttpUtil;
 import com.vxpai.utils.ImageUtil;
+
+import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Handler;
 
 
 /**
@@ -40,6 +56,8 @@ public class DetailShitsFragment extends Fragment {
     private ShitListItem detailShit;
 
     private OnFragmentInteractionListener mListener;
+
+    private SharedPreferences savedSearches;
 
     private DetailShitsFragment() {
         // Required empty public constructor
@@ -86,6 +104,7 @@ public class DetailShitsFragment extends Fragment {
             shitDetail = (TextView)rootView.findViewById(R.id.id_shits_content);
 
             priaseBtn = (ImageView)rootView.findViewById(R.id.id_praise_the_shit);
+            priaseBtn.setOnClickListener(priaseBtnListener);
             commentBtn = (ImageView)rootView.findViewById(R.id.id_comment_the_shit);
 
             backToShits = (ImageView)rootView.findViewById(R.id.id_back_to_shits);
@@ -115,7 +134,39 @@ public class DetailShitsFragment extends Fragment {
 
         @Override
         public void onClick(View v) {
+            Thread tt = new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    int cid = detailShit.getCid();
+                    List<NameValuePair> pairList = new ArrayList<NameValuePair>();
+                    pairList.add(new BasicNameValuePair("email", savedSearches.getString("email", null)));
+                    pairList.add(new BasicNameValuePair("password",savedSearches.getString("password", null)));
+                    pairList.add(new BasicNameValuePair("cid",Integer.toString(detailShit.getCid())));
 
+                    JSONObject json = HttpUtil.Post("http://tucao.vxpai.com/approve", pairList);
+                    try {
+                        int status = json.getInt("status");
+                        if(status == -1){
+                            Toast.makeText(getActivity(),getString(R.string.wrong_email_password),Toast.LENGTH_SHORT).show();
+                            mListener.onGoBackToLogin(true);
+                            return;
+                        }else if(status == -2){
+                            Toast.makeText(getActivity(),getString(R.string.have_praised),Toast.LENGTH_SHORT).show();
+                            return;
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
+            tt.start();
+            try {
+                tt.join();
+                int num = Integer.parseInt(praiseNum.getText().toString());
+                praiseNum.setText(Integer.toString(num+1));
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
     };
 
@@ -138,5 +189,9 @@ public class DetailShitsFragment extends Fragment {
 
     public void setDetailShit(ShitListItem detailShit) {
         this.detailShit = detailShit;
+    }
+
+    public void setSavedSearches(SharedPreferences savedSearches) {
+        this.savedSearches = savedSearches;
     }
 }

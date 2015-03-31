@@ -21,7 +21,7 @@ public interface OnFragmentInteractionListener {
 
     public void onNewUser();
 
-    public void onGoBackToLogin();
+    public void onGoBackToLogin(boolean isUserDataWrong);
 
     public void onEditPersonalData();
 

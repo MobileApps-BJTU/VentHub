@@ -11,14 +11,16 @@ public class ShitListItem {
     private String content;
     private String time;
     private int praiseNum;
+    private int cid;
     private List<String> imgList;
     private List<CommentListItem> commentList;
 
-    public ShitListItem(UserData userData, String content, String time, int praiseNum, List<String> imgList, List<CommentListItem> commentList) {
+    public ShitListItem(UserData userData, String content, String time, int praiseNum, int cid, List<String> imgList, List<CommentListItem> commentList) {
         this.userData = userData;
         this.content = content;
         this.time = time;
         this.praiseNum = praiseNum;
+        this.cid = cid;
         this.imgList = imgList;
         this.commentList = commentList;
     }
@@ -53,6 +55,14 @@ public class ShitListItem {
 
     public void setPraiseNum(int praiseNum) {
         this.praiseNum = praiseNum;
+    }
+
+    public int getCid() {
+        return cid;
+    }
+
+    public void setCid(int cid) {
+        this.cid = cid;
     }
 
     public List<String> getImgList() {
