@@ -22,4 +22,8 @@
      android:layout_height="wrap_content"
      android:visibility="gone"
      style="?attr/actionModeStyle" />
+<<<<<<< Updated upstream
 <!-- From: file:/E:/VentHub/VentHub/libraries/actionbarsherlock_library/res/layout/abs__action_mode_bar.xml --><!-- From: file:/E:/VentHub/VentHub/libraries/actionbarsherlock_library/build/intermediates/bundles/debug/res/layout/abs__action_mode_bar.xml -->
+=======
+<!-- From: file:/D:/Androidgithub/VentHub/VentHub/libraries/actionbarsherlock_library/res/layout/abs__action_mode_bar.xml --><!-- From: file:/D:/Androidgithub/VentHub/VentHub/libraries/actionbarsherlock_library/build/intermediates/bundles/debug/res/layout/abs__action_mode_bar.xml -->
+>>>>>>> Stashed changes

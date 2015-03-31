@@ -18,8 +18,12 @@
     <item android:drawable="@drawable/abs__list_pressed_holo_dark"  />
     <item android:drawable="@drawable/abs__list_longpressed_holo"  />
 </transition>
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <!-- From: file:/D:/Androidgithub/VentHub/VentHub/libraries/actionbarsherlock_library/res/drawable/abs__list_selector_background_transition_holo_dark.xml -->
 =======
 <!-- From: file:/E:/VentHub/VentHub/libraries/actionbarsherlock_library/res/drawable/abs__list_selector_background_transition_holo_dark.xml -->
 >>>>>>> 14fb28cb679171e410be9d32dc99c7b31821e27c
+=======
+<!-- From: file:/D:/Androidgithub/VentHub/VentHub/libraries/actionbarsherlock_library/res/drawable/abs__list_selector_background_transition_holo_dark.xml -->
+>>>>>>> Stashed changes

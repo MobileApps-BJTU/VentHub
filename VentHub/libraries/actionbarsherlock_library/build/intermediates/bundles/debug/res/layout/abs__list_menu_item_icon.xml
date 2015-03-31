@@ -26,8 +26,12 @@
     android:scaleType="centerInside"
     android:duplicateParentState="true" />
 
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <!-- From: file:/D:/Androidgithub/VentHub/VentHub/libraries/actionbarsherlock_library/res/layout/abs__list_menu_item_icon.xml -->
 =======
 <!-- From: file:/E:/VentHub/VentHub/libraries/actionbarsherlock_library/res/layout/abs__list_menu_item_icon.xml -->
 >>>>>>> 14fb28cb679171e410be9d32dc99c7b31821e27c
+=======
+<!-- From: file:/D:/Androidgithub/VentHub/VentHub/libraries/actionbarsherlock_library/res/layout/abs__list_menu_item_icon.xml -->
+>>>>>>> Stashed changes

@@ -68,8 +68,12 @@
     </FrameLayout>
 
 </com.actionbarsherlock.internal.widget.IcsLinearLayout>
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <!-- From: file:/D:/Androidgithub/VentHub/VentHub/libraries/actionbarsherlock_library/res/layout/abs__activity_chooser_view.xml -->
 =======
 <!-- From: file:/E:/VentHub/VentHub/libraries/actionbarsherlock_library/res/layout/abs__activity_chooser_view.xml -->
 >>>>>>> 14fb28cb679171e410be9d32dc99c7b31821e27c
+=======
+<!-- From: file:/D:/Androidgithub/VentHub/VentHub/libraries/actionbarsherlock_library/res/layout/abs__activity_chooser_view.xml -->
+>>>>>>> Stashed changes

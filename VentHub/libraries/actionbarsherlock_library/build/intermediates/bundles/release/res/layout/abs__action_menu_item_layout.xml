@@ -54,4 +54,8 @@
             android:paddingRight="4dip"
             android:focusable="false" />
 </com.actionbarsherlock.internal.view.menu.ActionMenuItemView>
+<<<<<<< Updated upstream
 <!-- From: file:/E:/VentHub/VentHub/libraries/actionbarsherlock_library/res/layout/abs__action_menu_item_layout.xml -->
+=======
+<!-- From: file:/D:/Androidgithub/VentHub/VentHub/libraries/actionbarsherlock_library/res/layout/abs__action_menu_item_layout.xml -->
+>>>>>>> Stashed changes

@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+<<<<<<< Updated upstream
 <<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
     <!-- From: file:/D:/Androidgithub/VentHub/VentHub/libraries/actionbarsherlock_library/res/values-w480dp/abs__bools.xml -->
     <eat-comment/>
     <bool name="abs__action_bar_embed_tabs">true</bool>
@@ -8,6 +11,7 @@
     <eat-comment/>
     <bool name="abs__config_allowActionMenuItemTextWithIcon">true</bool>
     <!-- From: file:/D:/Androidgithub/VentHub/VentHub/libraries/actionbarsherlock_library/res/values-w480dp/abs__bools.xml -->
+<<<<<<< Updated upstream
 =======
     <!-- From: file:/E:/VentHub/VentHub/libraries/actionbarsherlock_library/res/values-w480dp/abs__bools.xml -->
     <eat-comment/>
@@ -17,6 +21,8 @@
     <bool name="abs__config_allowActionMenuItemTextWithIcon">true</bool>
     <!-- From: file:/E:/VentHub/VentHub/libraries/actionbarsherlock_library/res/values-w480dp/abs__bools.xml -->
 >>>>>>> 14fb28cb679171e410be9d32dc99c7b31821e27c
+=======
+>>>>>>> Stashed changes
     <eat-comment/>
     <bool name="abs__split_action_bar_is_narrow">false</bool>
 </resources>

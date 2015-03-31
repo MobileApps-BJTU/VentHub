@@ -16,8 +16,12 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:drawable="@drawable/abs__ic_menu_moreoverflow_normal_holo_dark" />
 </selector>
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <!-- From: file:/D:/Androidgithub/VentHub/VentHub/libraries/actionbarsherlock_library/res/drawable/abs__ic_menu_moreoverflow_holo_dark.xml -->
 =======
 <!-- From: file:/E:/VentHub/VentHub/libraries/actionbarsherlock_library/res/drawable/abs__ic_menu_moreoverflow_holo_dark.xml -->
 >>>>>>> 14fb28cb679171e410be9d32dc99c7b31821e27c
+=======
+<!-- From: file:/D:/Androidgithub/VentHub/VentHub/libraries/actionbarsherlock_library/res/drawable/abs__ic_menu_moreoverflow_holo_dark.xml -->
+>>>>>>> Stashed changes
