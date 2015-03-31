@@ -68,7 +68,7 @@
                 android:textStyle="bold"
                 android:textSize="@dimen/text_size"
                 android:paddingLeft="@dimen/login_padding"
-                android:gravity="bottom" />
+                android:gravity="left|center" />
         </LinearLayout>
 
         <LinearLayout
@@ -83,7 +83,7 @@
                 android:orientation="horizontal"
                 android:layout_width="fill_parent"
                 android:layout_height="0dp"
-                android:layout_weight="1"
+                android:layout_weight="0.6"
                 android:paddingTop="3dp"
                 android:paddingBottom="3dp">
 
@@ -112,7 +112,7 @@
                 android:orientation="horizontal"
                 android:layout_width="fill_parent"
                 android:layout_height="0dp"
-                android:layout_weight="1"
+                android:layout_weight="0.6"
                 android:paddingTop="3dp"
                 android:paddingBottom="3dp">
 
@@ -142,7 +142,7 @@
                 android:orientation="horizontal"
                 android:layout_width="fill_parent"
                 android:layout_height="0dp"
-                android:layout_weight="1"
+                android:layout_weight="0.6"
                 android:paddingTop="3dp"
                 android:paddingBottom="3dp">
 
@@ -172,7 +172,7 @@
                 android:orientation="horizontal"
                 android:layout_width="fill_parent"
                 android:layout_height="0dp"
-                android:layout_weight="1"
+                android:layout_weight="0.6"
                 android:paddingTop="3dp"
                 android:paddingBottom="3dp">
 
@@ -202,7 +202,7 @@
                 android:orientation="horizontal"
                 android:layout_width="fill_parent"
                 android:layout_height="0dp"
-                android:layout_weight="1"
+                android:layout_weight="0.6"
                 android:paddingTop="3dp"
                 android:paddingBottom="3dp">
 
@@ -233,7 +233,7 @@
                 android:orientation="horizontal"
                 android:layout_width="fill_parent"
                 android:layout_height="0dp"
-                android:layout_weight="1"
+                android:layout_weight="0.6"
                 android:paddingTop="3dp"
                 android:paddingBottom="3dp">
 
@@ -262,7 +262,7 @@
                 android:orientation="horizontal"
                 android:layout_width="fill_parent"
                 android:layout_height="0dp"
-                android:layout_weight="1"
+                android:layout_weight="0.8"
                 android:paddingTop="3dp"
                 android:paddingBottom="3dp">
 
@@ -280,7 +280,8 @@
                     android:layout_width="0dp"
                     android:layout_height="fill_parent"
                     android:layout_weight="2"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:id="@+id/radioGroup">
 
                     <RadioButton
                         android:layout_width="0dp"

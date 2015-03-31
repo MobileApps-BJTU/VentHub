@@ -203,6 +203,52 @@ public class MainActivity extends Activity implements OnFragmentInteractionListe
     }
 
     @Override
+    public void onEditProfile(String username, final String new_pwd, String dob, String province, String gender) {
+        MainFragment.getInstance().setWhetherExit(true);
+        final String eusername = username;
+
+        final String enew_pwd = new_pwd;
+
+        final String edob = dob;
+        final String eprovince = province;
+        final String egender = gender;
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                List<NameValuePair> pairList = new ArrayList<NameValuePair>();
+                pairList.add(new BasicNameValuePair("username", eusername));
+                pairList.add(new BasicNameValuePair("password",new_pwd));
+                pairList.add(new BasicNameValuePair("dob", edob));
+                pairList.add(new BasicNameValuePair("province", eprovince));
+                pairList.add(new BasicNameValuePair("gender", egender));
+
+                JSONObject json = HttpUtil.Post("http://tucao.vxpai.com/edituserinfo", pairList);
+                try {
+                    int status = json.getInt("status");
+                    if (status == 0) {
+                        Looper.prepare();
+                        Toast.makeText(MainActivity.this, getString(R.string.register_success), Toast.LENGTH_LONG).show();
+                        Looper.loop();
+                    } else if(status == -1){
+                        Looper.prepare();
+                        Toast.makeText(MainActivity.this, getString(R.string.wrong_email_password), Toast.LENGTH_LONG).show();
+                        Looper.loop();
+                    }else{
+                        Looper.prepare();
+                        Toast.makeText(MainActivity.this, getString(R.string.repeat_username), Toast.LENGTH_LONG).show();
+                        Looper.loop();
+                    }
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        }).start();
+    }
+
+    @Override
     public void onSendVent(String vent, boolean isAnnoy) {
         MainFragment.getInstance().setWhetherExit(true);
         final String fVent = vent;
@@ -288,6 +334,7 @@ public class MainActivity extends Activity implements OnFragmentInteractionListe
             }
         }
     }
+
 
     @Override
     public void onEditPersonalData() {

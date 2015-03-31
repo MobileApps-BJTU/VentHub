@@ -24,6 +24,7 @@ public interface OnFragmentInteractionListener {
     public void onGoBackToLogin(boolean isUserDataWrong);
 
     public void onEditPersonalData();
+    public void onEditProfile(String username,String new_pwd,String dob,String province,String gender);
 
     public void onSendVent(String vent, boolean isAnnoy);
 }

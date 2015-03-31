@@ -50,4 +50,9 @@
     <string name="no_pwd">Please enter the password</string>
     <string name="no_username">Please enter the username</string>
     <string name="email">Email</string>
+
+    <string name="edit_profile">Profile</string>
+    <string name="sketch">Sketch</string>
+    <string name="settings">Setting</string>
+    <string name="about">About</string>
 </resources>
