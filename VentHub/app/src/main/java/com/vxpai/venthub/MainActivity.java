@@ -203,12 +203,13 @@ public class MainActivity extends Activity implements OnFragmentInteractionListe
     }
 
     @Override
-    public void onEditProfile(String username, final String new_pwd, String dob, String province, String gender) {
+    public void onEditProfile(String username, String cur_pwd,String new_pwd, String dob, String province, String gender) {
         MainFragment.getInstance().setWhetherExit(true);
+        final String eemail = savedSearches.getString("email", null);
+
         final String eusername = username;
-
+        final String ecur_pwd = cur_pwd;
         final String enew_pwd = new_pwd;
-
         final String edob = dob;
         final String eprovince = province;
         final String egender = gender;
@@ -217,8 +218,10 @@ public class MainActivity extends Activity implements OnFragmentInteractionListe
             @Override
             public void run() {
                 List<NameValuePair> pairList = new ArrayList<NameValuePair>();
+                pairList.add(new BasicNameValuePair("email", eemail));
                 pairList.add(new BasicNameValuePair("username", eusername));
-                pairList.add(new BasicNameValuePair("password",new_pwd));
+                pairList.add(new BasicNameValuePair("password",ecur_pwd));
+                pairList.add(new BasicNameValuePair("newpassword",enew_pwd));
                 pairList.add(new BasicNameValuePair("dob", edob));
                 pairList.add(new BasicNameValuePair("province", eprovince));
                 pairList.add(new BasicNameValuePair("gender", egender));
@@ -228,11 +231,11 @@ public class MainActivity extends Activity implements OnFragmentInteractionListe
                     int status = json.getInt("status");
                     if (status == 0) {
                         Looper.prepare();
-                        Toast.makeText(MainActivity.this, getString(R.string.register_success), Toast.LENGTH_LONG).show();
+                        Toast.makeText(MainActivity.this, getString(R.string.modify_success), Toast.LENGTH_LONG).show();
                         Looper.loop();
                     } else if(status == -1){
                         Looper.prepare();
-                        Toast.makeText(MainActivity.this, getString(R.string.wrong_email_password), Toast.LENGTH_LONG).show();
+                        Toast.makeText(MainActivity.this, getString(R.string.wrong_password), Toast.LENGTH_LONG).show();
                         Looper.loop();
                     }else{
                         Looper.prepare();

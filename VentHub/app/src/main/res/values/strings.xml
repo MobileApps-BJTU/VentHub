@@ -52,7 +52,7 @@
     <string name="no_username">请输入用户名</string>
     <string name="email">邮箱</string>
 
- <string name="release_to_refresh">松开刷新</string>
+    <string name="release_to_refresh">松开刷新</string>
     <string name="pull_to_refresh">下拉刷新</string>
     <string name="refreshing">正在刷新...</string>
     <string name="updating">最近更新：</string>
@@ -65,4 +65,9 @@
     <string name="edit_profile">个人资料</string>
     <string name="sketch">草稿</string>
     <string name="settings">设置</string>
-    <string name="about">关于</string></resources>
+    <string name="about">关于</string>
+
+    <string name="modify_success">修改成功</string>
+    <string name="wrong_password">密码错误</string>
+
+</resources>
