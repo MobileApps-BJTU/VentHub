@@ -115,7 +115,7 @@ public class ContentController {
 		return json.toString();
 	}
 	
-	@RequestMapping(value="/gettop100",method=RequestMethod.POST)
+	@RequestMapping(value="/gettop100",method=RequestMethod.POST,produces = "text/html;charset=UTF-8")
 	public @ResponseBody String gettop100(){
 		Session session = sessionFactory.openSession();
 		Query query = session.createSQLQuery("select vent_content.cid,vent_content.email,content,username,posttime,isannoy,ifnull(approvenum,0) from vent_user,vent_content left join (select cid,count(*) as approvenum from vent_approve group by cid)t on t.cid=vent_content.cid where vent_content.email=vent_user.email order by approvenum desc limit 100;");

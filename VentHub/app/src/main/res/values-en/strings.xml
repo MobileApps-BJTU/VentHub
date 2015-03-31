@@ -63,7 +63,9 @@
     <string name="complete">Complete</string>
 
     <string name="have_praised">Already praised！</string>
-    <string name="annoy_user">Anonym</string>
+    <string name="annoy_user">Anonymous</string>
     <string name="modify_success">Modify success</string>
     <string name="wrong_password">Wrong password</string>
+    <string name="main_title">Vent List</string>
+    <string name="txt_menu_title">Menu</string>
 </resources>
