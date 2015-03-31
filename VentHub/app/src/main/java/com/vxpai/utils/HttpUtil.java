@@ -47,10 +47,9 @@ public class HttpUtil {
             // 发送请求
 
             int res = 0;
-            res = httpClient.execute(httpPost).getStatusLine().getStatusCode();
+            HttpResponse httpResponse = httpClient.execute(httpPost);
+            res = httpResponse.getStatusLine().getStatusCode();
             if (res == 200) {
-
-                HttpResponse httpResponse = httpClient.execute(httpPost);
                 StringBuilder builder = new StringBuilder();
                 BufferedReader bufferedReader2 = new BufferedReader(
                         new InputStreamReader(httpResponse.getEntity().getContent()));

@@ -13,6 +13,7 @@ public interface OnFragmentInteractionListener {
     public void onGoBackToMain();
 
     public void onLogin(String email,String password);
+    public void onRegister(String email,String username,String pwd);
 
     public void onShowDetailShits(ShitListItem shit);
 

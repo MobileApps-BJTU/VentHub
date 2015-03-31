@@ -142,13 +142,54 @@ public class MainActivity extends Activity implements OnFragmentInteractionListe
                         SharedPreferences.Editor editor = savedSearches.edit();
                         editor.putString("email", fEmail);
                         editor.putString("password", fPassword);
-
+                        editor.commit();
                         fm.beginTransaction().replace(R.id.container, MainFragment.getInstance()).commit();
                     } else {
                         Looper.prepare();
                         Toast.makeText(MainActivity.this, getString(R.string.wrong_email_password), Toast.LENGTH_LONG).show();
                         Looper.loop();
                     }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        }).start();
+    }
+
+    @Override
+    public void onRegister(String email, String username, String pwd) {
+        MainFragment.getInstance().setWhetherExit(true);
+        final String remail = email;
+        final String rusername = username;
+        final String rpwd = pwd;
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                List<NameValuePair> pairList = new ArrayList<NameValuePair>();
+                pairList.add(new BasicNameValuePair("email", remail));
+                pairList.add(new BasicNameValuePair("username", rusername));
+                pairList.add(new BasicNameValuePair("password",rpwd));
+
+                JSONObject json = HttpUtil.Post("http://tucao.vxpai.com/register", pairList);
+                try {
+                    int status = json.getInt("status");
+                    if (status == 0) {
+
+                        fm.beginTransaction().replace(R.id.container, LoginFragment.getInstance()).commit();
+                        Looper.prepare();
+                        Toast.makeText(MainActivity.this, getString(R.string.register_success), Toast.LENGTH_LONG).show();
+                        Looper.loop();
+                    } else if(status == -1){
+                        Looper.prepare();
+                        Toast.makeText(MainActivity.this, getString(R.string.repeat_email), Toast.LENGTH_LONG).show();
+                        Looper.loop();
+                    }else{
+                        Looper.prepare();
+                        Toast.makeText(MainActivity.this, getString(R.string.repeat_username), Toast.LENGTH_LONG).show();
+                        Looper.loop();
+                    }
+
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -213,11 +254,11 @@ public class MainActivity extends Activity implements OnFragmentInteractionListe
     @Override
     public void onShowDetailUser(UserData user) {
 
-        DetailFriendFragment.getInstance().setUserDetail(user);
-        FragmentTransaction ft = fm.beginTransaction();
-        ft.replace(R.id.container, DetailFriendFragment.getInstance())
-                .addToBackStack(null)
-                .commit();
+        //DetailFriendFragment.getInstance().setUserDetail(user);
+        //FragmentTransaction ft = fm.beginTransaction();
+        //ft.replace(R.id.container, DetailFriendFragment.getInstance())
+         //       .addToBackStack(null)
+           //     .commit();
     }
 
     @Override

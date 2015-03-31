@@ -63,7 +63,7 @@
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="fill_parent"
-                    android:text="@string/user_name"
+                    android:text="@string/email"
                     android:id="@+id/textView22"
                     android:layout_gravity="center_vertical"
                     android:layout_weight="1"
@@ -98,7 +98,7 @@
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="fill_parent"
-                    android:text="@string/nickename"
+                    android:text="@string/user_name"
                     android:id="@+id/textView24"
                     android:gravity="center_vertical"
                     android:textStyle="bold"

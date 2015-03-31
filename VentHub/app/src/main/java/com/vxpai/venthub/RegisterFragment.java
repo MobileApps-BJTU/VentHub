@@ -6,14 +6,20 @@ import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.app.Fragment;
+import android.os.Looper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.vxpai.interfaces.OnFragmentInteractionListener;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 
 /**
@@ -30,6 +36,10 @@ public class RegisterFragment extends Fragment {
 
     private View rootView;
 
+    private EditText emailEdit;
+    private EditText usernameEdit;
+    private EditText pwdEdit;
+    private EditText confirmpwdEdit;
     private RegisterFragment() {
         // Required empty public constructor
     }
@@ -78,6 +88,10 @@ public class RegisterFragment extends Fragment {
 
             backToLogin.setOnClickListener(backToLoginListener);
             registerBtn.setOnClickListener(registerListener);
+            emailEdit = (EditText) rootView.findViewById(R.id.editText8);
+            usernameEdit = (EditText) rootView.findViewById(R.id.editText10);
+            pwdEdit = (EditText) rootView.findViewById(R.id.editText11);
+            confirmpwdEdit = (EditText) rootView.findViewById(R.id.editText12);
         }
         ViewGroup parent = (ViewGroup) rootView.getParent();
         if (parent != null)
@@ -98,12 +112,38 @@ public class RegisterFragment extends Fragment {
         }
     };
 
+    public static boolean isEmail(String strEmail) {
+        String strPattern = "^[a-zA-Z][\\w\\.-]*[a-zA-Z0-9]@[a-zA-Z0-9][\\w\\.-]*[a-zA-Z0-9]\\.[a-zA-Z][a-zA-Z\\.]*[a-zA-Z]$";
+
+        Pattern p = Pattern.compile(strPattern);
+        Matcher m = p.matcher(strEmail);
+        return m.matches();
+    }
     private View.OnClickListener registerListener = new View.OnClickListener(){
 
         @Override
         public void onClick(View v) {
             //TO DO
-            mListener.onGoBackToLogin();
+
+            String email = emailEdit.getText().toString();
+            String username = usernameEdit.getText().toString();
+            String pwd = pwdEdit.getText().toString();
+            String confirmpwd = confirmpwdEdit.getText().toString();
+            //mListener.onRegister(email, username, pwd);
+            if (pwd.equals(confirmpwd)) {
+                if (isEmail(email))
+                    mListener.onRegister(email, username, pwd);
+                else {
+                    //Looper.prepare();
+                    Toast.makeText(getActivity(), getString(R.string.wrong_email_pattern), Toast.LENGTH_LONG).show();
+                    //Looper.loop();
+                }
+            }
+            else {
+                //Looper.prepare();
+                Toast.makeText(getActivity(), getString(R.string.wrong_repeat_password), Toast.LENGTH_LONG).show();
+                //Looper.loop();
+            }
         }
     };
 }
