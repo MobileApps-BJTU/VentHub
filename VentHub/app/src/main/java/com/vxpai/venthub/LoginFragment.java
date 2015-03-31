@@ -10,6 +10,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.app.Fragment;
+import android.os.IBinder;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -23,6 +24,7 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.PopupWindow;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.vxpai.entity.UserListItem;
 import com.vxpai.interfaces.OnFragmentInteractionListener;
@@ -93,7 +95,7 @@ import java.util.List;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        ((MainActivity)this.getActivity()).registerMyTouchListener(mTouchListener);
     }
 
     @Override
@@ -105,25 +107,29 @@ import java.util.List;
     @Override
     public void onResume() {
         super.onResume();
-        ((MainActivity)this.getActivity()).registerMyTouchListener(mTouchListener);
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        if (rootView == null)
-        {
-            rootView = inflater.inflate(R.layout.login_fragment, container, false);
-            initViews(rootView);
-        }
-        ViewGroup parent = (ViewGroup) rootView.getParent();
-        if (parent != null)
-        {
-            parent.removeView(rootView);
-        }
-
-        return rootView;
+//        if (rootView == null)
+//        {
+//            rootView = inflater.inflate(R.layout.login_fragment, container, false);
+//            initViews(rootView);
+//            ((MainActivity)this.getActivity()).registerMyTouchListener(mTouchListener);
+//        }
+//        ViewGroup parent = (ViewGroup) rootView.getParent();
+//        if (parent != null)
+//        {
+//            parent.removeView(rootView);
+//        }
+//
+//        return rootView;
+        View view = inflater.inflate(R.layout.login_fragment, container, false);
+        initViews(view);
+        return view;
     }
 
     private void initViews(View view){
@@ -260,7 +266,12 @@ import java.util.List;
             // TODO Auto-generated method stub
             if(event.getAction() == MotionEvent.ACTION_UP){
                 InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(getActivity().INPUT_METHOD_SERVICE);
-                imm.hideSoftInputFromWindow(getActivity().getCurrentFocus().getWindowToken(), 0);
+                try {
+                    IBinder binder = getActivity().getCurrentFocus().getWindowToken();
+                    imm.hideSoftInputFromWindow(binder, 0);
+                }catch(Exception ex){
+                    //Toast.makeText(getActivity(), ex.toString(), Toast.LENGTH_SHORT).show();
+                }
             }
         }
     };

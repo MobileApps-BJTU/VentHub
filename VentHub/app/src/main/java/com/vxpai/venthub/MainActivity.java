@@ -3,6 +3,7 @@ package com.vxpai.venthub;
 import android.app.Activity;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Looper;
@@ -14,6 +15,7 @@ import android.widget.Toast;
 import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
 import com.jeremyfeinstein.slidingmenu.lib.app.SlidingFragmentActivity;
 import com.vxpai.entity.ShitListItem;
+import com.vxpai.entity.UserData;
 import com.vxpai.interfaces.OnFragmentInteractionListener;
 import com.vxpai.utils.HttpUtil;
 
@@ -209,6 +211,16 @@ public class MainActivity extends Activity implements OnFragmentInteractionListe
     }
 
     @Override
+    public void onShowDetailUser(UserData user) {
+
+        DetailFriendFragment.getInstance().setUserDetail(user);
+        FragmentTransaction ft = fm.beginTransaction();
+        ft.replace(R.id.container, DetailFriendFragment.getInstance())
+                .addToBackStack(null)
+                .commit();
+    }
+
+    @Override
     public void onNewUser() {
         FragmentTransaction ft = fm.beginTransaction();
         ft.replace(R.id.container, RegisterFragment.getInstance())
@@ -218,17 +230,21 @@ public class MainActivity extends Activity implements OnFragmentInteractionListe
 
     @Override
     public void onGoBackToLogin() {
-        FragmentTransaction ft = fm.beginTransaction();
-        ft.replace(R.id.container, LoginFragment.getInstance());
-        ft.commit();
+//        FragmentTransaction ft = fm.beginTransaction();
+//        ft.replace(R.id.container, LoginFragment.getInstance());
+//        ft.commit();
+        if (fm.getBackStackEntryCount() > 0) {
+            fm.popBackStack();
+        }
     }
 
     @Override
     public void onEditPersonalData() {
-        MainFragment.getInstance().setWhetherExit(false);
+        //MainFragment.getInstance().setWhetherExit(false);
         FragmentTransaction ft = fm.beginTransaction();
-        ft.replace(R.id.container, EditPersonalDataFragment.getInstance());
-        ft.commit();
+        ft.replace(R.id.container, EditPersonalDataFragment.getInstance())
+          .addToBackStack(null)
+          .commit();
         MainFragment.getInstance().setContentVisibility(false);
     }
 
@@ -275,5 +291,18 @@ public class MainActivity extends Activity implements OnFragmentInteractionListe
             listener.onTouchEvent(ev);
         }
         return super.dispatchTouchEvent(ev);
+    }
+
+    @Override
+    public void onBackPressed() {
+        FragmentManager fm = getFragmentManager();
+        if (fm.getBackStackEntryCount() > 0) {
+            fm.popBackStack();
+        } else {
+            Intent intent = new Intent(Intent.ACTION_MAIN);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);// 注意
+            intent.addCategory(Intent.CATEGORY_HOME);
+            this.startActivity(intent);
+        }
     }
 }

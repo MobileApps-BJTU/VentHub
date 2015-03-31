@@ -13,7 +13,7 @@
         <ImageView
             android:layout_width="0dp"
             android:layout_height="fill_parent"
-            android:id="@+id/id_back_to_shits"
+            android:id="@+id/id_back_to_friend_list"
             android:layout_weight="1"
             android:src="@drawable/left"
             android:padding="@dimen/login_padding" />
@@ -56,7 +56,7 @@
             <ListView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/listView3" />
+                android:id="@+id/id_friend_shits_detail" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

@@ -29,7 +29,6 @@ import com.vxpai.utils.ImageUtil;
 public class DetailShitsFragment extends Fragment {
 
     private static DetailShitsFragment mInstance;
-    private FragmentManager fm;
     private View rootView;
     private ImageView backToShits, headImg, priaseBtn, commentBtn;
     private TextView nickName, shitTime, shitDetail, praiseNum;
@@ -71,13 +70,6 @@ public class DetailShitsFragment extends Fragment {
             throw new ClassCastException(activity.toString()
                     + " must implement OnFragmentInteractionListener");
         }
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-        fm = getFragmentManager();
     }
 
     @Override

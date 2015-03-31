@@ -4,6 +4,7 @@ package com.vxpai.venthub;
 import android.app.Activity;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Typeface;
@@ -199,6 +200,13 @@ public class MainFragment extends Fragment {
 //       }
 //        super.onDestroy();
 //    }
+
+   @Override
+   public void onDestroy() {
+        super.onDestroy();
+
+       rootView = null;
+   }
 
     private View.OnClickListener homePageListener = new View.OnClickListener(){
 
