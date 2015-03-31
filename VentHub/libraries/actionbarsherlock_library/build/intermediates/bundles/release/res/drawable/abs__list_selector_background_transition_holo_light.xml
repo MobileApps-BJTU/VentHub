@@ -18,4 +18,4 @@
     <item android:drawable="@drawable/abs__list_pressed_holo_light"  />
     <item android:drawable="@drawable/abs__list_longpressed_holo"  />
 </transition>
-<!-- From: file:/Users/KunKun/eclipse%20workspace/VentHub/VentHub/libraries/actionbarsherlock_library/res/drawable/abs__list_selector_background_transition_holo_light.xml -->
+<!-- From: file:/D:/Androidgithub/VentHub/VentHub/libraries/actionbarsherlock_library/res/drawable/abs__list_selector_background_transition_holo_light.xml -->

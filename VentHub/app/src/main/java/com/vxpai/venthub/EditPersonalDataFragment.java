@@ -14,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.vxpai.interfaces.OnFragmentInteractionListener;
 
@@ -121,7 +122,9 @@ public class EditPersonalDataFragment extends Fragment {
             String province = provinceEdit.getText().toString();
 
             if (new_pwd.equals(con_pwd))
-                mListener.onEditProfile(username,new_pwd,dob,province,gender);
+                mListener.onEditProfile(username,cur_pwd,new_pwd,dob,province,gender);
+            else
+                Toast.makeText(getActivity(), getString(R.string.wrong_repeat_password), Toast.LENGTH_LONG).show();
         }
     };
 
