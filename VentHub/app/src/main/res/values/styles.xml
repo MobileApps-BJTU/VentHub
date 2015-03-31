@@ -1,8 +1,0 @@
-<resources>
-
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="android:Theme.Holo.Light.NoActionBar" type= "text/css">
-        <item name="android:windowBackground">@drawable/welcome</item>
-    </style>
-
-</resources>

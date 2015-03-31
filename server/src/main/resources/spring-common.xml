@@ -11,7 +11,7 @@
 		<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
 		<property name="url" value="jdbc:mysql://182.92.187.178:3306/tucao?useUnicode=true&amp;characterEncoding=UTF-8"></property>
 		<property name="username" value="tucao" />
-		<property name="password" value="braveheart" />
+		<property name="password" value="ilovekunkun" />
 	</bean>
 	
 	<!-- 配置SessionFactory -->

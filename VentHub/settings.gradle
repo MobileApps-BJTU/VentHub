@@ -1,3 +1,0 @@
-include ':app'
-include ':app',':libraries:actionbarsherlock_library'
-include ':app',':libraries:slidemenu_library'

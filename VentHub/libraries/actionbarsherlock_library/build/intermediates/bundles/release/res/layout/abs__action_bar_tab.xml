@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-
-<view
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    class="com.actionbarsherlock.internal.widget.ScrollingTabContainerView$TabView"
-    style="?attr/actionBarTabStyle"
-/><!-- From: file:/Users/KunKun/eclipse%20workspace/VentHub/VentHub/libraries/actionbarsherlock_library/res/layout/abs__action_bar_tab.xml -->
