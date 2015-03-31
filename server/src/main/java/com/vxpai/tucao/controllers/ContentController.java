@@ -1,5 +1,10 @@
 package com.vxpai.tucao.controllers;
 
+import java.math.BigInteger;
+import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.List;
+
 import net.sf.json.JSONObject;
 
 import org.hibernate.Query;
@@ -13,7 +18,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.alibaba.fastjson.JSON;
 import com.vxpai.tucao.entities.Content;
+import com.vxpai.tucao.entities.ContentList;
 
 
 @Controller
@@ -53,10 +60,27 @@ public class ContentController {
 		return json.toString();		
 	}
 	
-	@RequestMapping(value="/initventlist",method=RequestMethod.POST)
-	public @ResponseBody String initventlist(@RequestParam(value="email")String email,
-												@RequestParam(value="lasttime")String lasttime){
-		return null;
+	@RequestMapping(value="/initventlist",produces = "text/html;charset=UTF-8")
+	public @ResponseBody String initventlist(@RequestParam(value="email")String email){
+		Session session = sessionFactory.openSession();
+		Query query = session.createSQLQuery("select vent_content.cid,vent_content.email,content,username,posttime,isannoy,ifnull(approvenum,0) from vent_user,vent_content left join (select cid,count(*) as approvenum from vent_approve group by cid)t on t.cid=vent_content.cid where vent_content.email=vent_user.email and (vent_content.email=:email or vent_content.email in (select followee from vent_follow where follower=:email) ) order by posttime desc;");
+		query.setString("email", email);
+		List ls = query.list();
+		List res = new ArrayList<ContentList>();
+		//Object obj = ls.get(0);
+		for(int i=0;i<ls.size();i++){
+			Object[] obj = (Object[]) ls.get(i);
+			ContentList cl = new ContentList();
+			cl.setCid((Integer) obj[0]);
+			cl.setEmail((String) obj[1]);
+			cl.setContent((String)obj[2]);
+			cl.setUsername((String)obj[3]);
+			cl.setPosttime((Timestamp)obj[4]);
+			cl.setIsannoy((String)obj[5]);
+			cl.setApproveNum((BigInteger)obj[6]);
+			res.add(cl);
+		}
+		return JSON.toJSONString(res);
 	}
 	
 	@RequestMapping(value="/getventlist",method=RequestMethod.POST)

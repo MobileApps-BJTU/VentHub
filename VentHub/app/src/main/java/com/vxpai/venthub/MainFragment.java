@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Typeface;
@@ -50,6 +51,8 @@ public class MainFragment extends Fragment {
 
     private int mScreenWidth;
     private SlidingMenu menu;
+
+    private SharedPreferences savedSearches;
 
     private MainFragment() {
         // Required empty public constructor
@@ -141,6 +144,7 @@ public class MainFragment extends Fragment {
             mUserName = (TextView)rootView.findViewById(R.id.id_username_show);
             mUserName.setOnClickListener(noUseListener);
 
+            HomeFragment.getInstance().setSavedSearches(savedSearches);
             HomeFragment.getInstance().setWhetherExit(true);
             FragmentTransaction ft = fm.beginTransaction();
             ft.add(R.id.id_main_container, HomeFragment.getInstance());
@@ -298,4 +302,6 @@ public class MainFragment extends Fragment {
     public void setHomePage(boolean isHomePage) {
         this.isHomePage = isHomePage;
     }
+
+    public void setSavedSearches(SharedPreferences savedSearches){ this.savedSearches = savedSearches;}
 }

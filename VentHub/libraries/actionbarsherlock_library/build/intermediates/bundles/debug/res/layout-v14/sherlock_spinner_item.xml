@@ -24,4 +24,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:ellipsize="marquee" />
+<<<<<<< HEAD
 <!-- From: file:/D:/Androidgithub/VentHub/VentHub/libraries/actionbarsherlock_library/res/layout-v14/sherlock_spinner_item.xml -->
+=======
+<!-- From: file:/E:/VentHub/VentHub/libraries/actionbarsherlock_library/res/layout-v14/sherlock_spinner_item.xml -->
+>>>>>>> 14fb28cb679171e410be9d32dc99c7b31821e27c

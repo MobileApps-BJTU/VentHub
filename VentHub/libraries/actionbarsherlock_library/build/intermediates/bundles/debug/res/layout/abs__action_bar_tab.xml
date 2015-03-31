@@ -4,4 +4,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     class="com.actionbarsherlock.internal.widget.ScrollingTabContainerView$TabView"
     style="?attr/actionBarTabStyle"
+<<<<<<< HEAD
 /><!-- From: file:/D:/Androidgithub/VentHub/VentHub/libraries/actionbarsherlock_library/res/layout/abs__action_bar_tab.xml -->
+=======
+/><!-- From: file:/E:/VentHub/VentHub/libraries/actionbarsherlock_library/res/layout/abs__action_bar_tab.xml -->
+>>>>>>> 14fb28cb679171e410be9d32dc99c7b31821e27c

@@ -23,4 +23,4 @@
           android:drawable="@drawable/abs__spinner_ab_focused_holo_dark" />
     <item android:drawable="@drawable/abs__spinner_ab_default_holo_dark" />
 </selector>
-<!-- From: file:/Users/DPC/Documents/Mobile%20App%20Development/Assignments/VentHub/VentHub/libraries/actionbarsherlock_library/res/drawable/abs__spinner_ab_holo_dark.xml --><!-- From: file:/Users/DPC/Documents/Mobile%20App%20Development/Assignments/VentHub/VentHub/libraries/actionbarsherlock_library/build/intermediates/bundles/debug/res/drawable/abs__spinner_ab_holo_dark.xml -->
+<!-- From: file:/E:/VentHub/VentHub/libraries/actionbarsherlock_library/res/drawable/abs__spinner_ab_holo_dark.xml --><!-- From: file:/E:/VentHub/VentHub/libraries/actionbarsherlock_library/build/intermediates/bundles/debug/res/drawable/abs__spinner_ab_holo_dark.xml -->

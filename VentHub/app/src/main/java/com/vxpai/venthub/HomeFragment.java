@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -38,6 +39,8 @@ public class HomeFragment extends Fragment {
     private View rootView;
 
     private boolean whetherExit = false;
+
+    private SharedPreferences savedSearches;
 
     private HomeFragment() {
         // Required empty public constructor
@@ -81,6 +84,7 @@ public class HomeFragment extends Fragment {
             mTopList.setOnClickListener(topListListener);
             mAnonymitySquare.setOnClickListener(anonymitySquareListener);
 
+            FriendFragment.getInstance().setSavedSearches(savedSearches);
             FragmentTransaction ft = fm.beginTransaction();
             ft.add(R.id.id_home_container, FriendFragment.getInstance());
             ft.commit();
@@ -166,4 +170,6 @@ public class HomeFragment extends Fragment {
     };
 
     public void setWhetherExit(boolean whetherExit){ this.whetherExit = whetherExit; }
+
+    public void setSavedSearches(SharedPreferences savedSearches){ this.savedSearches = savedSearches;}
 }

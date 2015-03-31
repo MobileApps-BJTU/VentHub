@@ -58,4 +58,8 @@
     <!-- Checkbox, and/or radio button will be inserted here. -->
     
 </com.actionbarsherlock.internal.view.menu.ListMenuItemView>
+<<<<<<< HEAD
 <!-- From: file:/D:/Androidgithub/VentHub/VentHub/libraries/actionbarsherlock_library/res/layout/abs__popup_menu_item_layout.xml -->
+=======
+<!-- From: file:/E:/VentHub/VentHub/libraries/actionbarsherlock_library/res/layout/abs__popup_menu_item_layout.xml -->
+>>>>>>> 14fb28cb679171e410be9d32dc99c7b31821e27c

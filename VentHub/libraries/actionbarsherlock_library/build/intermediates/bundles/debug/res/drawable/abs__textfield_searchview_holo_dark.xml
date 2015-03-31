@@ -20,4 +20,8 @@
     <item android:drawable="@drawable/abs__textfield_search_default_holo_dark" />
 </selector>
 
+<<<<<<< HEAD
 <!-- From: file:/D:/Androidgithub/VentHub/VentHub/libraries/actionbarsherlock_library/res/drawable/abs__textfield_searchview_holo_dark.xml -->
+=======
+<!-- From: file:/E:/VentHub/VentHub/libraries/actionbarsherlock_library/res/drawable/abs__textfield_searchview_holo_dark.xml -->
+>>>>>>> 14fb28cb679171e410be9d32dc99c7b31821e27c
