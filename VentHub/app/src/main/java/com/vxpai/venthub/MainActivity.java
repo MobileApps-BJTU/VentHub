@@ -21,6 +21,7 @@ import com.vxpai.utils.HttpUtil;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -136,6 +137,7 @@ public class MainActivity extends Activity implements OnFragmentInteractionListe
                 pairList.add(new BasicNameValuePair("email", fEmail));
                 pairList.add(new BasicNameValuePair("password", fPassword));
                 JSONObject json = HttpUtil.Post("http://tucao.vxpai.com/checkuserinfo", pairList);
+
                 try {
                     int status = json.getInt("status");
                     if (status == 0) {
@@ -143,6 +145,7 @@ public class MainActivity extends Activity implements OnFragmentInteractionListe
                         editor.putString("email", fEmail);
                         editor.putString("password", fPassword);
                         editor.commit();
+                        MainFragment.getInstance().setSavedSearches(savedSearches);
                         fm.beginTransaction().replace(R.id.container, MainFragment.getInstance()).commit();
                     } else {
                         Looper.prepare();
@@ -219,6 +222,7 @@ public class MainActivity extends Activity implements OnFragmentInteractionListe
                 try {
                     int status = json.getInt("status");
                     if (status == 0) {
+                        FriendFragment.getInstance().refresh();
                         fm.beginTransaction().replace(R.id.container, MainFragment.getInstance()).commit();
 
                         Looper.prepare();
