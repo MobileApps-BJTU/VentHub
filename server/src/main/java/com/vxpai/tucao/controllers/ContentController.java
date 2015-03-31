@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.alibaba.fastjson.JSON;
+import com.vxpai.tucao.entities.Approve;
 import com.vxpai.tucao.entities.Content;
 import com.vxpai.tucao.entities.ContentList;
 
@@ -60,7 +61,7 @@ public class ContentController {
 		return json.toString();		
 	}
 	
-	@RequestMapping(value="/initventlist",produces = "text/html;charset=UTF-8")
+	@RequestMapping(value="/initventlist", method=RequestMethod.POST,produces = "text/html;charset=UTF-8")
 	public @ResponseBody String initventlist(@RequestParam(value="email")String email){
 		Session session = sessionFactory.openSession();
 		Query query = session.createSQLQuery("select vent_content.cid,vent_content.email,content,username,posttime,isannoy,ifnull(approvenum,0) from vent_user,vent_content left join (select cid,count(*) as approvenum from vent_approve group by cid)t on t.cid=vent_content.cid where vent_content.email=vent_user.email and (vent_content.email=:email or vent_content.email in (select followee from vent_follow where follower=:email) ) order by posttime desc;");
@@ -88,5 +89,31 @@ public class ContentController {
 												@RequestParam(value="from")String from){
 		return null;
 	}
+	
+	@RequestMapping(value="/approve", method=RequestMethod.POST)
+	public @ResponseBody String approve(@RequestParam(value="email")String email,
+										@RequestParam(value="cid")int cid){
+		Approve approve = new Approve();
+		approve.setEmail(email);
+		approve.setCid(cid);
+		Session session = sessionFactory.openSession();
+		JSONObject json = new JSONObject();
+		Query query = session.createQuery("from Approve where email=:email and cid=:cid");
+		query.setString("email", email);
+		query.setString("cid", Integer.toString(cid));
+		List ls = query.list();
+		if( ls.size()!=0 ){
+			json.put("status", "-2");
+		} else {
+			approve.setEmail(email);
+			approve.setCid(cid);
+			Transaction tx = session.beginTransaction();
+			session.save(approve);
+			tx.commit();
+		}
+		session.close();
+		return json.toString();
+	}
+	
 	
 }
