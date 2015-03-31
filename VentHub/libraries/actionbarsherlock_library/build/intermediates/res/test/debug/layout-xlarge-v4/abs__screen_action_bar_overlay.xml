@@ -48,4 +48,8 @@ the Action Bar enabled overlaying application content.
                android:layout_height="wrap_content"
                android:layout_below="@id/abs__action_bar_container" />
 </RelativeLayout>
-<!-- From: file:/Users/DPC/Documents/Mobile%20App%20Development/Assignments/VentHub/VentHub/libraries/actionbarsherlock_library/res/layout-xlarge/abs__screen_action_bar_overlay.xml --><!-- From: file:/Users/DPC/Documents/Mobile%20App%20Development/Assignments/VentHub/VentHub/libraries/actionbarsherlock_library/build/intermediates/bundles/debug/res/layout-xlarge-v4/abs__screen_action_bar_overlay.xml -->
+<<<<<<< Updated upstream
+<!-- From: file:/E:/VentHub/VentHub/libraries/actionbarsherlock_library/res/layout-xlarge/abs__screen_action_bar_overlay.xml --><!-- From: file:/E:/VentHub/VentHub/libraries/actionbarsherlock_library/build/intermediates/bundles/debug/res/layout-xlarge-v4/abs__screen_action_bar_overlay.xml -->
+=======
+<!-- From: file:/D:/Androidgithub/VentHub/VentHub/libraries/actionbarsherlock_library/res/layout-xlarge/abs__screen_action_bar_overlay.xml --><!-- From: file:/D:/Androidgithub/VentHub/VentHub/libraries/actionbarsherlock_library/build/intermediates/bundles/debug/res/layout-xlarge-v4/abs__screen_action_bar_overlay.xml -->
+>>>>>>> Stashed changes

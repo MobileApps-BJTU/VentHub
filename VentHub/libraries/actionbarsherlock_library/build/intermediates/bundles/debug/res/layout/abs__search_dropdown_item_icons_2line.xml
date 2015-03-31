@@ -87,4 +87,12 @@
               android:layout_above="@android:id/text2" />
 
 </RelativeLayout>
-<!-- From: file:/Users/DPC/Documents/Mobile%20App%20Development/Assignments/VentHub/VentHub/libraries/actionbarsherlock_library/res/layout/abs__search_dropdown_item_icons_2line.xml -->
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+<!-- From: file:/D:/Androidgithub/VentHub/VentHub/libraries/actionbarsherlock_library/res/layout/abs__search_dropdown_item_icons_2line.xml -->
+=======
+<!-- From: file:/E:/VentHub/VentHub/libraries/actionbarsherlock_library/res/layout/abs__search_dropdown_item_icons_2line.xml -->
+>>>>>>> 14fb28cb679171e410be9d32dc99c7b31821e27c
+=======
+<!-- From: file:/D:/Androidgithub/VentHub/VentHub/libraries/actionbarsherlock_library/res/layout/abs__search_dropdown_item_icons_2line.xml -->
+>>>>>>> Stashed changes

@@ -26,4 +26,8 @@
     android:scaleType="centerInside"
     android:duplicateParentState="true" />
 
-<!-- From: file:/Users/DPC/Documents/Mobile%20App%20Development/Assignments/VentHub/VentHub/libraries/actionbarsherlock_library/res/layout/abs__list_menu_item_icon.xml --><!-- From: file:/Users/DPC/Documents/Mobile%20App%20Development/Assignments/VentHub/VentHub/libraries/actionbarsherlock_library/build/intermediates/bundles/debug/res/layout/abs__list_menu_item_icon.xml -->
+<<<<<<< Updated upstream
+<!-- From: file:/E:/VentHub/VentHub/libraries/actionbarsherlock_library/res/layout/abs__list_menu_item_icon.xml --><!-- From: file:/E:/VentHub/VentHub/libraries/actionbarsherlock_library/build/intermediates/bundles/debug/res/layout/abs__list_menu_item_icon.xml -->
+=======
+<!-- From: file:/D:/Androidgithub/VentHub/VentHub/libraries/actionbarsherlock_library/res/layout/abs__list_menu_item_icon.xml --><!-- From: file:/D:/Androidgithub/VentHub/VentHub/libraries/actionbarsherlock_library/build/intermediates/bundles/debug/res/layout/abs__list_menu_item_icon.xml -->
+>>>>>>> Stashed changes

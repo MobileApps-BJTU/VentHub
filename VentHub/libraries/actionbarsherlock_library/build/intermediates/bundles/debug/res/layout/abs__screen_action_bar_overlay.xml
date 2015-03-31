@@ -58,4 +58,12 @@ the Action Bar enabled overlaying application content.
                   android:visibility="gone"
                   android:gravity="center"/>
 </FrameLayout>
-<!-- From: file:/Users/DPC/Documents/Mobile%20App%20Development/Assignments/VentHub/VentHub/libraries/actionbarsherlock_library/res/layout/abs__screen_action_bar_overlay.xml -->
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+<!-- From: file:/D:/Androidgithub/VentHub/VentHub/libraries/actionbarsherlock_library/res/layout/abs__screen_action_bar_overlay.xml -->
+=======
+<!-- From: file:/E:/VentHub/VentHub/libraries/actionbarsherlock_library/res/layout/abs__screen_action_bar_overlay.xml -->
+>>>>>>> 14fb28cb679171e410be9d32dc99c7b31821e27c
+=======
+<!-- From: file:/D:/Androidgithub/VentHub/VentHub/libraries/actionbarsherlock_library/res/layout/abs__screen_action_bar_overlay.xml -->
+>>>>>>> Stashed changes

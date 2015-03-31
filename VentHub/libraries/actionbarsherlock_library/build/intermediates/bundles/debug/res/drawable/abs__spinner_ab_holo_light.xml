@@ -23,4 +23,12 @@
           android:drawable="@drawable/abs__spinner_ab_focused_holo_light" />
     <item android:drawable="@drawable/abs__spinner_ab_default_holo_light" />
 </selector>
-<!-- From: file:/Users/DPC/Documents/Mobile%20App%20Development/Assignments/VentHub/VentHub/libraries/actionbarsherlock_library/res/drawable/abs__spinner_ab_holo_light.xml -->
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+<!-- From: file:/D:/Androidgithub/VentHub/VentHub/libraries/actionbarsherlock_library/res/drawable/abs__spinner_ab_holo_light.xml -->
+=======
+<!-- From: file:/E:/VentHub/VentHub/libraries/actionbarsherlock_library/res/drawable/abs__spinner_ab_holo_light.xml -->
+>>>>>>> 14fb28cb679171e410be9d32dc99c7b31821e27c
+=======
+<!-- From: file:/D:/Androidgithub/VentHub/VentHub/libraries/actionbarsherlock_library/res/drawable/abs__spinner_ab_holo_light.xml -->
+>>>>>>> Stashed changes

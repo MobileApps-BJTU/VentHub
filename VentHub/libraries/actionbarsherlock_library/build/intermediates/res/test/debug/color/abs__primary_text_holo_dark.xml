@@ -22,4 +22,8 @@
     <item android:state_activated="true" android:color="@color/abs__bright_foreground_holo_dark"/>
     <item android:color="@color/abs__bright_foreground_holo_dark"/> <!-- not selected -->
 </selector>
-<!-- From: file:/Users/DPC/Documents/Mobile%20App%20Development/Assignments/VentHub/VentHub/libraries/actionbarsherlock_library/res/color/abs__primary_text_holo_dark.xml --><!-- From: file:/Users/DPC/Documents/Mobile%20App%20Development/Assignments/VentHub/VentHub/libraries/actionbarsherlock_library/build/intermediates/bundles/debug/res/color/abs__primary_text_holo_dark.xml -->
+<<<<<<< Updated upstream
+<!-- From: file:/E:/VentHub/VentHub/libraries/actionbarsherlock_library/res/color/abs__primary_text_holo_dark.xml --><!-- From: file:/E:/VentHub/VentHub/libraries/actionbarsherlock_library/build/intermediates/bundles/debug/res/color/abs__primary_text_holo_dark.xml -->
+=======
+<!-- From: file:/D:/Androidgithub/VentHub/VentHub/libraries/actionbarsherlock_library/res/color/abs__primary_text_holo_dark.xml --><!-- From: file:/D:/Androidgithub/VentHub/VentHub/libraries/actionbarsherlock_library/build/intermediates/bundles/debug/res/color/abs__primary_text_holo_dark.xml -->
+>>>>>>> Stashed changes

@@ -52,7 +52,7 @@
                 android:layout_height="wrap_content"
                 layout="@layout/item_detail_shits" />
 
-            <ListView
+            <com.vxpai.view.ListViewForScrollView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/id_comment_list" />
