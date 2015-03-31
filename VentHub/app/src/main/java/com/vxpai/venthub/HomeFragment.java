@@ -126,6 +126,7 @@ public class HomeFragment extends Fragment {
         @Override
         public void onClick(View v) {
             if(!isFriendSquareClicked){
+                FriendFragment.getInstance().setSavedSearches(savedSearches);
                 FragmentTransaction ft = fm.beginTransaction();
                 ft.replace(R.id.id_home_container, FriendFragment.getInstance());
                 ft.commit();
@@ -158,6 +159,7 @@ public class HomeFragment extends Fragment {
         @Override
         public void onClick(View v) {
             if(!isAnonymitySquareClicked){
+                AnonymityFragment.getInstance().setSavedSearches(savedSearches);
                 FragmentTransaction ft = fm.beginTransaction();
                 ft.replace(R.id.id_home_container, AnonymityFragment.getInstance());
                 ft.commit();
