@@ -38,4 +38,4 @@
               android:textAllCaps="true"
               android:text="@string/abs__action_mode_done" />
 </com.actionbarsherlock.internal.nineoldandroids.widget.NineLinearLayout>
-<!-- From: file:/E:/VentHub/VentHub/libraries/actionbarsherlock_library/res/layout-large/abs__action_mode_close_item.xml -->
+<!-- From: file:/Users/KunKun/eclipse%20workspace/VentHub/VentHub/libraries/actionbarsherlock_library/res/layout-large/abs__action_mode_close_item.xml -->

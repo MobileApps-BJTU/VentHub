@@ -36,4 +36,12 @@
                android:adjustViewBounds="true"
                android:scaleType="fitCenter" />
 </view>
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+<!-- From: file:/D:/Androidgithub/VentHub/VentHub/libraries/actionbarsherlock_library/res/layout/abs__action_bar_home.xml -->
+=======
 <!-- From: file:/E:/VentHub/VentHub/libraries/actionbarsherlock_library/res/layout/abs__action_bar_home.xml -->
+>>>>>>> 14fb28cb679171e410be9d32dc99c7b31821e27c
+=======
+<!-- From: file:/D:/Androidgithub/VentHub/VentHub/libraries/actionbarsherlock_library/res/layout/abs__action_bar_home.xml -->
+>>>>>>> Stashed changes

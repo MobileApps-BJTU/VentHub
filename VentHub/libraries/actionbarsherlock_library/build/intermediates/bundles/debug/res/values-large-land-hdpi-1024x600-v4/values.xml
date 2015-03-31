@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+    <!-- From: file:/D:/Androidgithub/VentHub/VentHub/libraries/actionbarsherlock_library/res/values-large-land-hdpi-1024x600/abs__dimens.xml -->
+=======
     <!-- From: file:/E:/VentHub/VentHub/libraries/actionbarsherlock_library/res/values-large-land-hdpi-1024x600/abs__dimens.xml -->
+>>>>>>> 14fb28cb679171e410be9d32dc99c7b31821e27c
+=======
+    <!-- From: file:/D:/Androidgithub/VentHub/VentHub/libraries/actionbarsherlock_library/res/values-large-land-hdpi-1024x600/abs__dimens.xml -->
+>>>>>>> Stashed changes
     <eat-comment/>
     <dimen name="abs__action_bar_default_height">40dip</dimen>
     <dimen name="abs__action_bar_icon_vertical_padding">4dip</dimen>

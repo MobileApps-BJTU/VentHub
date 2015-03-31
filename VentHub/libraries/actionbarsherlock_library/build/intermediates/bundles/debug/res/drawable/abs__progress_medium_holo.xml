@@ -32,4 +32,12 @@
              android:toDegrees="720" />
     </item>
 </layer-list>
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+<!-- From: file:/D:/Androidgithub/VentHub/VentHub/libraries/actionbarsherlock_library/res/drawable/abs__progress_medium_holo.xml -->
+=======
 <!-- From: file:/E:/VentHub/VentHub/libraries/actionbarsherlock_library/res/drawable/abs__progress_medium_holo.xml -->
+>>>>>>> 14fb28cb679171e410be9d32dc99c7b31821e27c
+=======
+<!-- From: file:/D:/Androidgithub/VentHub/VentHub/libraries/actionbarsherlock_library/res/drawable/abs__progress_medium_holo.xml -->
+>>>>>>> Stashed changes

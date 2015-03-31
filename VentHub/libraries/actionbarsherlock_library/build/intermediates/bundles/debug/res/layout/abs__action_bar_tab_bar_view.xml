@@ -4,4 +4,12 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     style="?attr/actionBarTabBarStyle"
 />
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+<!-- From: file:/D:/Androidgithub/VentHub/VentHub/libraries/actionbarsherlock_library/res/layout/abs__action_bar_tab_bar_view.xml -->
+=======
 <!-- From: file:/E:/VentHub/VentHub/libraries/actionbarsherlock_library/res/layout/abs__action_bar_tab_bar_view.xml -->
+>>>>>>> 14fb28cb679171e410be9d32dc99c7b31821e27c
+=======
+<!-- From: file:/D:/Androidgithub/VentHub/VentHub/libraries/actionbarsherlock_library/res/layout/abs__action_bar_tab_bar_view.xml -->
+>>>>>>> Stashed changes

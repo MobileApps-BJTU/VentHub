@@ -113,7 +113,7 @@ public class RegisterFragment extends Fragment {
     };
 
     public static boolean isEmail(String strEmail) {
-        String strPattern = "^[a-zA-Z][\\w\\.-]*[a-zA-Z0-9]@[a-zA-Z0-9][\\w\\.-]*[a-zA-Z0-9]\\.[a-zA-Z][a-zA-Z\\.]*[a-zA-Z]$";
+        String strPattern = "^([a-zA-Z0-9]*[-_]?[a-zA-Z0-9]+)*@([a-zA-Z0-9]*[-_]?[a-zA-Z0-9]+)+[\\\\.][A-Za-z]{2,3}([\\\\.][A-Za-z]{2})?$";
 
         Pattern p = Pattern.compile(strPattern);
         Matcher m = p.matcher(strEmail);
@@ -130,7 +130,13 @@ public class RegisterFragment extends Fragment {
             String pwd = pwdEdit.getText().toString();
             String confirmpwd = confirmpwdEdit.getText().toString();
             //mListener.onRegister(email, username, pwd);
-            if (pwd.equals(confirmpwd)) {
+            if (email.equals(""))
+                Toast.makeText(getActivity(), getString(R.string.no_email), Toast.LENGTH_LONG).show();
+            else if (username.equals(""))
+                Toast.makeText(getActivity(), getString(R.string.no_username), Toast.LENGTH_LONG).show();
+            else if(pwd.equals(""))
+                Toast.makeText(getActivity(), getString(R.string.no_pwd), Toast.LENGTH_LONG).show();
+            else if (pwd.equals(confirmpwd)) {
                 if (isEmail(email))
                     mListener.onRegister(email, username, pwd);
                 else {
