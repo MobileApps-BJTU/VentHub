@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">VentHub</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="username">Email</string>
+    <string name="user_name">Username：</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="newuser">New User</string>
+    <string name="lostpwd">Forget Password</string>
+    <string name="friend">Friend</string>
+    <string name="friend_square">Friend Circle</string>
+    <string name="home">Home</string>
+    <string name="hot_board">Top</string>
+    <string name="anonymity_square">Anonymity</string>
+    <string name="write_shits">Edit Vent</string>
+    <string name="shits">Vent</string>
+    <string name="send_shits">Send</string>
+    <string name="shits_hint">Say something...</string>
+    <string name="logout">Logout</string>
+    <string name="switch_user">Switch</string>
+    <string name="user_data_edit">Edit Profile</string>
+    <string name="nickename">Nickname：</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="secret">Secrecy</string>
+    <string name="save_changes">Save</string>
+    <string name="birthday">Date of Birth：</string>
+    <string name="sex">Gender：</string>
+    <string name="current_password">Current Password：</string>
+    <string name="new_password">New Password：</string>
+    <string name="new_password_repeat">Confirm Password：</string>
+    <string name="register">Sign Up</string>
+    <string name="register_btn">Register</string>
+    <string name="province">Province：</string>
+    <string name="comment">Comment</string>
+    <string name="back_to_shitlist">Vent List</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="wrong_email_password">Email or password error</string>
+    <string name="send_success">Senf success</string>
+
+    <string name="wrong_repeat_password">Entered passwords differ </string>
+    <string name="repeat_email">Email has been registered</string>
+    <string name="repeat_username">Username has been registered</string>
+    <string name="wrong_email_pattern">Email format error</string>
+    <string name="register_success">Register success</string>
+
+    <string name="no_email">Please enter the email</string>
+    <string name="no_pwd">Please enter the password</string>
+    <string name="no_username">Please enter the username</string>
+    <string name="email">Email</string>
+</resources>
