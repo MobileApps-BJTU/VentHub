@@ -73,6 +73,7 @@ public class UserController {
 	@RequestMapping(value="/edituserinfo", method=RequestMethod.POST)
 	public @ResponseBody String editUserInfo(@RequestParam(value="email")String email,
 												@RequestParam(value="newpassword")String newpassword,
+												@RequestParam(value="username")String username,
 												@RequestParam(value="dob")Date dob,
 												@RequestParam(value="province")String province,
 												@RequestParam(value="gender")String gender){
@@ -87,6 +88,7 @@ public class UserController {
 		us.setDob(dob);
 		us.setProvince(province);
 		us.setGender(gender);
+		us.setUsername(username);
 		JSONObject json = new JSONObject();
 		try{
 			Transaction tx = session.beginTransaction();

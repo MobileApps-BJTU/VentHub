@@ -219,6 +219,7 @@ public class MainFragment extends Fragment {
             if(!isHomePageClicked) {
                 FriendListFragment.getInstance().setWhetherExit(false);
                 HomeFragment.getInstance().setWhetherExit(true);
+                HomeFragment.getInstance().setSavedSearches(savedSearches);
                 FragmentTransaction ft = fm.beginTransaction();
                 ft.replace(R.id.id_main_container, HomeFragment.getInstance());
                 ft.commit();
@@ -265,6 +266,7 @@ public class MainFragment extends Fragment {
             if(!isFriendListClicked) {
                 HomeFragment.getInstance().setWhetherExit(false);
                 FriendListFragment.getInstance().setWhetherExit(true);
+                FriendListFragment.getInstance().setSavedSearches(savedSearches);
                 FragmentTransaction ft = fm.beginTransaction();
                 ft.replace(R.id.id_main_container, FriendListFragment.getInstance());
                 ft.commit();

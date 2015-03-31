@@ -8,6 +8,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.app.Fragment;
+import android.os.Looper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -147,11 +148,15 @@ public class DetailShitsFragment extends Fragment {
                     try {
                         int status = json.getInt("status");
                         if(status == -1){
+                            Looper.prepare();
                             Toast.makeText(getActivity(),getString(R.string.wrong_email_password),Toast.LENGTH_SHORT).show();
+                            Looper.loop();
                             mListener.onGoBackToLogin(true);
                             return;
                         }else if(status == -2){
+                            Looper.prepare();
                             Toast.makeText(getActivity(),getString(R.string.have_praised),Toast.LENGTH_SHORT).show();
+                            Looper.loop();
                             return;
                         }
                     } catch (JSONException e) {

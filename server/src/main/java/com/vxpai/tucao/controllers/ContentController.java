@@ -90,7 +90,7 @@ public class ContentController {
 		return null;
 	}
 	
-	@RequestMapping(value="/approve", method=RequestMethod.GET)
+	@RequestMapping(value="/approve", method=RequestMethod.POST)
 	public @ResponseBody String approve(@RequestParam(value="email")String email,
 										@RequestParam(value="cid")int cid){
 		Approve approve = new Approve();
@@ -115,5 +115,26 @@ public class ContentController {
 		return json.toString();
 	}
 	
+	@RequestMapping(value="/gettop100",method=RequestMethod.POST)
+	public @ResponseBody String gettop100(){
+		Session session = sessionFactory.openSession();
+		Query query = session.createSQLQuery("select vent_content.cid,vent_content.email,content,username,posttime,isannoy,ifnull(approvenum,0) from vent_user,vent_content left join (select cid,count(*) as approvenum from vent_approve group by cid)t on t.cid=vent_content.cid where vent_content.email=vent_user.email order by approvenum desc limit 100;");
+		List ls = query.list();
+		List res = new ArrayList<ContentList>();
+		//Object obj = ls.get(0);
+		for(int i=0;i<ls.size();i++){
+			Object[] obj = (Object[]) ls.get(i);
+			ContentList cl = new ContentList();
+			cl.setCid((Integer) obj[0]);
+			cl.setEmail((String) obj[1]);
+			cl.setContent((String)obj[2]);
+			cl.setUsername((String)obj[3]);
+			cl.setPosttime((Timestamp)obj[4]);
+			cl.setIsannoy((String)obj[5]);
+			cl.setApproveNum((BigInteger)obj[6]);
+			res.add(cl);
+		}
+		return JSON.toJSONString(res);
+	}
 	
 }

@@ -306,11 +306,11 @@ public class MainActivity extends Activity implements OnFragmentInteractionListe
     @Override
     public void onShowDetailUser(UserData user) {
 
-        //DetailFriendFragment.getInstance().setUserDetail(user);
-        //FragmentTransaction ft = fm.beginTransaction();
-        //ft.replace(R.id.container, DetailFriendFragment.getInstance())
-         //       .addToBackStack(null)
-           //     .commit();
+//        DetailFriendFragment.getInstance().setUserDetail(user);
+//        FragmentTransaction ft = fm.beginTransaction();
+//        ft.replace(R.id.container, DetailFriendFragment.getInstance())
+//                .addToBackStack(null)
+//                .commit();
     }
 
     @Override

@@ -143,6 +143,7 @@ public class HomeFragment extends Fragment {
         @Override
         public void onClick(View v) {
             if(!isTopListClicked){
+                TopFragment.getInstance().setSavedSearches(savedSearches);
                 FragmentTransaction ft = fm.beginTransaction();
                 ft.replace(R.id.id_home_container, TopFragment.getInstance());
                 ft.commit();

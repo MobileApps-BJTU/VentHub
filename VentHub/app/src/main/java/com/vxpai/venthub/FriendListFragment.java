@@ -1,20 +1,32 @@
 package com.vxpai.venthub;
 
 import android.app.Activity;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.app.ListFragment;
+import android.os.Looper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.Toast;
 
 
 import com.vxpai.Adapter.FriendListAdapter;
+import com.vxpai.entity.CommentListItem;
 import com.vxpai.entity.ShitListItem;
 import com.vxpai.entity.UserData;
 import com.vxpai.entity.UserListItem;
 import com.vxpai.interfaces.OnFragmentInteractionListener;
+import com.vxpai.utils.HttpUtil;
 
+import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,6 +47,10 @@ public class FriendListFragment extends ListFragment {
     private boolean whetherExit = false;
 
     private List<UserListItem> list;
+
+    private FriendListAdapter friendListAdapter;
+
+    private SharedPreferences savedSearches;
 
     private FriendListFragment() {
         // Required empty public constructor
@@ -61,13 +77,38 @@ public class FriendListFragment extends ListFragment {
         super.onCreate(savedInstanceState);
 
         list = new ArrayList<UserListItem>();
-        list.add(new UserListItem(new UserData("Mike@163.com", "Mike", "1234")));
-        list.add(new UserListItem(new UserData("Ann@163.com", "Ann", "1234")));
-        list.add(new UserListItem(new UserData("Paul@163.com", "Paul", "1234")));
-        list.add(new UserListItem(new UserData("Peter@163.com", "Peter", "1234")));
-        list.add(new UserListItem(new UserData("Brown@163.com", "Brown", "1234")));
+        friendListAdapter = new FriendListAdapter(getActivity(),list);
+        setListAdapter(friendListAdapter);
+//        list.add(new UserListItem(new UserData("Mike@163.com", "Mike", "1234")));
+//        list.add(new UserListItem(new UserData("Ann@163.com", "Ann", "1234")));
+//        list.add(new UserListItem(new UserData("Paul@163.com", "Paul", "1234")));
+//        list.add(new UserListItem(new UserData("Peter@163.com", "Peter", "1234")));
+//        list.add(new UserListItem(new UserData("Brown@163.com", "Brown", "1234")));
+        Thread tt = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                List<NameValuePair> pairList = new ArrayList<NameValuePair>();
+                pairList.add(new BasicNameValuePair("email", savedSearches.getString("email", null)));
+                pairList.add(new BasicNameValuePair("password",savedSearches.getString("password", null)));
 
-        setListAdapter(new FriendListAdapter(getActivity(),list));
+                JSONArray json = HttpUtil.PostArray("http://tucao.vxpai.com/getfollowlist", pairList);
+                for(int i = 0;i < json.length();i++) {
+                    try {
+                        JSONArray obj = new JSONArray(json.get(i).toString());
+                        list.add(new UserListItem(new UserData((String)obj.get(0),(String)obj.get(1),null)));
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        });
+        tt.start();
+        try {
+            tt.join();
+            friendListAdapter.notifyDataSetChanged();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -119,6 +160,10 @@ public class FriendListFragment extends ListFragment {
     }
 
     public void setWhetherExit(boolean whetherExit){ this.whetherExit = whetherExit; }
+
+    public void setSavedSearches(SharedPreferences savedSearches) {
+        this.savedSearches = savedSearches;
+    }
 
     /**
      * This interface must be implemented by activities that contain this
