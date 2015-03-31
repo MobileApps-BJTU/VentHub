@@ -20,8 +20,4 @@
     <padding android:left="5dp" android:top="0dp"
         android:right="5dp" android:bottom="1dp" />
 </shape>
-<<<<<<< Updated upstream
-<!-- From: file:/E:/VentHub/VentHub/libraries/actionbarsherlock_library/res/drawable/abs__search_dropdown_dark.xml -->
-=======
 <!-- From: file:/D:/Androidgithub/VentHub/VentHub/libraries/actionbarsherlock_library/res/drawable/abs__search_dropdown_dark.xml -->
->>>>>>> Stashed changes

@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-<<<<<<< Updated upstream
-    <!-- From: file:/E:/VentHub/VentHub/libraries/actionbarsherlock_library/res/values-v11/abs__themes.xml -->
-=======
     <!-- From: file:/D:/Androidgithub/VentHub/VentHub/libraries/actionbarsherlock_library/res/values-v11/abs__themes.xml -->
->>>>>>> Stashed changes
     <eat-comment/>
     <style name="Sherlock.__Theme" parent="android:Theme.Holo">
         <item name="android:windowNoTitle">true</item>

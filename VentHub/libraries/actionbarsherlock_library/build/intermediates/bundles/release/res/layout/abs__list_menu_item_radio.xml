@@ -22,8 +22,4 @@
     android:focusable="false"
     android:clickable="false"
     android:duplicateParentState="true" />
-<<<<<<< Updated upstream
-<!-- From: file:/E:/VentHub/VentHub/libraries/actionbarsherlock_library/res/layout/abs__list_menu_item_radio.xml -->
-=======
 <!-- From: file:/D:/Androidgithub/VentHub/VentHub/libraries/actionbarsherlock_library/res/layout/abs__list_menu_item_radio.xml -->
->>>>>>> Stashed changes

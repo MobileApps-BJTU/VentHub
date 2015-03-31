@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-<<<<<<< Updated upstream
-    <!-- From: file:/E:/VentHub/VentHub/libraries/actionbarsherlock_library/res/values-v14/abs__themes.xml -->
-=======
     <!-- From: file:/D:/Androidgithub/VentHub/VentHub/libraries/actionbarsherlock_library/res/values-v14/abs__themes.xml -->
->>>>>>> Stashed changes
     <eat-comment/>
     <style name="Sherlock.__Theme" parent="android:Theme.Holo">
     </style>
@@ -22,11 +18,7 @@
     </style>
     <style name="Sherlock.__Theme.Light" parent="android:Theme.Holo.Light">
     </style>
-<<<<<<< Updated upstream
-    <!-- From: file:/E:/VentHub/VentHub/libraries/actionbarsherlock_library/res/values-v14/abs__styles.xml -->
-=======
     <!-- From: file:/D:/Androidgithub/VentHub/VentHub/libraries/actionbarsherlock_library/res/values-v14/abs__styles.xml -->
->>>>>>> Stashed changes
     <eat-comment/>
     <style name="TextAppearance.Sherlock.Light.Widget.PopupMenu.Large" parent="android:TextAppearance.Holo.Widget.PopupMenu.Large">
     </style>
@@ -56,11 +48,7 @@
     </style>
     <style name="TextAppearance.Sherlock.Widget.PopupMenu.Small" parent="android:TextAppearance.Holo.Widget.PopupMenu.Small">
     </style>
-<<<<<<< Updated upstream
-    <!-- From: file:/E:/VentHub/VentHub/libraries/actionbarsherlock_library/res/values-v14/abs__themes.xml -->
-=======
     <!-- From: file:/D:/Androidgithub/VentHub/VentHub/libraries/actionbarsherlock_library/res/values-v14/abs__themes.xml -->
->>>>>>> Stashed changes
     <eat-comment/>
     <style name="Theme.Sherlock.Light.NoActionBar">
       <item name="android:windowActionBar">false</item>
@@ -70,11 +58,7 @@
       <item name="android:windowActionBar">false</item>
       <item name="android:windowNoTitle">true</item>
     </style>
-<<<<<<< Updated upstream
-    <!-- From: file:/E:/VentHub/VentHub/libraries/actionbarsherlock_library/res/values-v14/abs__styles.xml -->
-=======
     <!-- From: file:/D:/Androidgithub/VentHub/VentHub/libraries/actionbarsherlock_library/res/values-v14/abs__styles.xml -->
->>>>>>> Stashed changes
     <eat-comment/>
     <style name="Widget.Sherlock.ActionBar" parent="android:Widget.Holo.ActionBar">
     </style>

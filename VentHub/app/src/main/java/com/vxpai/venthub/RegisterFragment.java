@@ -4,7 +4,6 @@ package com.vxpai.venthub;
 import android.app.Activity;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.os.Looper;
@@ -18,14 +17,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.vxpai.interfaces.OnFragmentInteractionListener;
-import com.vxpai.utils.HttpUtil;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-
-
-
-
 
 
 /**
@@ -46,16 +40,19 @@ public class RegisterFragment extends Fragment {
     private EditText usernameEdit;
     private EditText pwdEdit;
     private EditText confirmpwdEdit;
-
     private RegisterFragment() {
         // Required empty public constructor
     }
 
-    public static RegisterFragment getInstance() {
+    public static RegisterFragment getInstance()
+    {
 
-        if (mInstance == null) {
-            synchronized (RegisterFragment.class) {
-                if (mInstance == null) {
+        if (mInstance == null)
+        {
+            synchronized (RegisterFragment.class)
+            {
+                if (mInstance == null)
+                {
                     mInstance = new RegisterFragment();
                 }
             }
@@ -83,10 +80,11 @@ public class RegisterFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        if (rootView == null) {
+        if (rootView == null)
+        {
             rootView = inflater.inflate(R.layout.register_fragment, container, false);
-            backToLogin = (ImageView) rootView.findViewById(R.id.id_back_to_login);
-            registerBtn = (Button) rootView.findViewById(R.id.id_register);
+            backToLogin = (ImageView)rootView.findViewById(R.id.id_back_to_login);
+            registerBtn = (Button)rootView.findViewById(R.id.id_register);
 
             backToLogin.setOnClickListener(backToLoginListener);
             registerBtn.setOnClickListener(registerListener);
@@ -96,19 +94,20 @@ public class RegisterFragment extends Fragment {
             confirmpwdEdit = (EditText) rootView.findViewById(R.id.editText12);
         }
         ViewGroup parent = (ViewGroup) rootView.getParent();
-        if (parent != null) {
+        if (parent != null)
+        {
             parent.removeView(rootView);
         }
+
 
 
         return rootView;
     }
 
-    private View.OnClickListener backToLoginListener = new View.OnClickListener() {
+    private View.OnClickListener backToLoginListener = new View.OnClickListener(){
 
         @Override
         public void onClick(View v) {
-
             mListener.onGoBackToLogin();
         }
     };
@@ -122,56 +121,8 @@ public class RegisterFragment extends Fragment {
     }
     private View.OnClickListener registerListener = new View.OnClickListener(){
 
-        Pattern p = Pattern.compile(strPattern);
-        Matcher m = p.matcher(strEmail);
-        return m.matches();
-    }
-
-    private View.OnClickListener registerListener = new View.OnClickListener() {
-
         @Override
         public void onClick(View v) {
-            emailEdit = (EditText) v.findViewById(R.id.editText8);
-            usernameEdit = (EditText) v.findViewById(R.id.editText10);
-            pwdEdit = (EditText) v.findViewById(R.id.editText11);
-            confirmpwdEdit = (EditText) v.findViewById(R.id.editText12);
-            final String email = emailEdit.getText().toString();
-            final String username = usernameEdit.getText().toString();
-            final String pwd = pwdEdit.getText().toString();
-            final String confirmpwd = confirmpwdEdit.getText().toString();
-            if (pwd.equals(confirmpwd)) {
-                if (isEmail(email)) {
-
-                    List<NameValuePair> pairList = new ArrayList<NameValuePair>();
-                    pairList.add(new BasicNameValuePair("email", email));
-                    pairList.add(new BasicNameValuePair("username", username));
-                    pairList.add(new BasicNameValuePair("password", pwd));
-
-                    JSONObject json = HttpUtil.Post("http://tucao.vxpai.com/register", pairList);
-                    try {
-                        int status = json.getInt("status");
-                        if (status == 0)
-                            mListener.onGoBackToLogin();
-                        else if (status == -1)
-                            Toast.makeText(getActivity(), getString(R.string.repeat_email), Toast.LENGTH_LONG).show();
-
-                        else {
-                            Looper.prepare();
-                            Toast.makeText(getActivity(), getString(R.string.repeat_username), Toast.LENGTH_LONG).show();
-                            Looper.loop();
-                        }
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-
-
-
-                } else
-                    Toast.makeText(getActivity(), getString(R.string.wrong_email_pattern), Toast.LENGTH_LONG).show();
-            }
-
-            else
-                Toast.makeText(getActivity(),getString(R.string.wrong_repeat_password),Toast.LENGTH_LONG).show();
             //TO DO
 
             String email = emailEdit.getText().toString();
@@ -201,6 +152,4 @@ public class RegisterFragment extends Fragment {
             }
         }
     };
-
-
 }
