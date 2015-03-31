@@ -1,5 +1,7 @@
 package com.vxpai.tucao.controllers;
 
+import java.util.List;
+
 import net.sf.json.JSONObject;
 
 import org.hibernate.Query;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.alibaba.fastjson.JSON;
 import com.vxpai.tucao.entities.Follow;
 
 
@@ -45,8 +48,12 @@ public class FollowController {
 	}
 	
 	@RequestMapping(value="/getfollowlist",method=RequestMethod.POST)
-	public @ResponseBody String getfollowlist(@RequestParam(value="email")String email,
-												@RequestParam(value="from")String from){
-		return null;
+	public @ResponseBody String getfollowlist(@RequestParam(value="email")String email){
+		Session session = sessionFactory.openSession();
+		Query query = session.createSQLQuery("select followee,username from vent_follow,vent_user where vent_follow.followee=vent_user.email and follower=:email");
+		query.setString("email", email);
+		List ls = query.list();
+		String json = JSON.toJSONString(ls);
+		return json;
 	}
 }

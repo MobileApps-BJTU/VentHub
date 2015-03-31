@@ -90,7 +90,7 @@ public class ContentController {
 		return null;
 	}
 	
-	@RequestMapping(value="/approve", method=RequestMethod.POST)
+	@RequestMapping(value="/approve", method=RequestMethod.GET)
 	public @ResponseBody String approve(@RequestParam(value="email")String email,
 										@RequestParam(value="cid")int cid){
 		Approve approve = new Approve();
