@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/main_color">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:id="@+id/id_backfromshits"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:padding="@dimen/login_padding"
+            android:src="@drawable/left" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:text="@string/shits"
+            android:id="@+id/textView9"
+            android:layout_weight="4"
+            android:textSize="@dimen/text_size"
+            android:gravity="center"
+            android:textColor="#ffffffff"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:text="@string/send_shits"
+            android:id="@+id/id_send_shits"
+            android:layout_weight="1"
+            android:textSize="@dimen/text_size"
+            android:textColor="#ffffffff"
+            android:gravity="center"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="9"
+        android:padding="10dp"
+        android:background="@drawable/xixi">
+
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/editText"
+            android:background="#00ffffff"
+            android:hint="@string/shits_hint"
+            android:gravity="top"
+            android:minLines="10"
+            android:maxLines="10"
+            android:selectAllOnFocus="true" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="2dp"
+            android:background="?android:attr/listDivider"
+            />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:measureWithLargestChild="false">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:id="@+id/imageView9"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/smile"
+                    android:layout_weight="1" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:id="@+id/imageView10"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/photo"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:id="@+id/imageView11"
+                    android:adjustViewBounds="true"
+                    android:layout_weight="1"
+                    android:src="@drawable/camera" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="2"></LinearLayout>
+
+            <CheckBox
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:text="匿名"
+                android:id="@+id/checkBox"
+                android:layout_weight="1"
+                android:checked="false" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

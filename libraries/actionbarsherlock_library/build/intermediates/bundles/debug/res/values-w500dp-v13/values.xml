@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+    <!-- From: file:/D:/Androidgithub/VentHub/VentHub/libraries/actionbarsherlock_library/res/values-w500dp/abs__dimens.xml -->
+=======
+    <!-- From: file:/E:/VentHub/VentHub/libraries/actionbarsherlock_library/res/values-w500dp/abs__dimens.xml -->
+>>>>>>> 14fb28cb679171e410be9d32dc99c7b31821e27c
+=======
+    <!-- From: file:/D:/Androidgithub/VentHub/VentHub/libraries/actionbarsherlock_library/res/values-w500dp/abs__dimens.xml -->
+>>>>>>> Stashed changes
+    <eat-comment/>
+    <integer name="abs__max_action_buttons">4</integer>
+</resources>

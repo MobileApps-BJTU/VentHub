@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="3">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:id="@+id/id_user_image_detail_shits"
+                android:layout_weight="1"
+                android:src="@drawable/battlefield"
+                android:adjustViewBounds="true" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="4">
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    android:id="@+id/id_username_detail_shits"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/text_size"
+                    android:gravity="left|center_vertical"
+                    android:paddingLeft="5dp"
+                    android:text="丿灬樱花笑" />
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="0dp"
+                    android:id="@+id/id_datetime_detail_shits"
+                    android:layout_weight="1"
+                    android:gravity="left|center_vertical"
+                    android:paddingLeft="5dp"
+                    android:textSize="@dimen/text_size"
+                    android:text="16:50" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1">
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="经过这次的修改之后黑色闪屏现象消失了，最终达到了自己理想的效果。最后，经过查阅资料发现已经有人总结和处理过这类问题了，并且给出了优缺点的分析，我在这里以我的理解对其进行引用。"
+        android:id="@+id/id_shits_content"
+        android:maxLines="3"
+        android:textSize="@dimen/text_size"
+        android:padding="10dp"
+        android:ellipsize="end" />
+
+    <GridView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/id_image_container"
+        android:padding="@dimen/login_padding"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="3dp"
+        android:numColumns="3"
+        android:horizontalSpacing="3dp" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/login_padding"
+        android:paddingRight="@dimen/login_padding">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="3"></LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:id="@+id/id_praise_the_shit"
+                android:layout_weight="1"
+                android:src="@drawable/vent" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:id="@+id/id_comment_the_shit"
+                android:layout_weight="1"
+                android:src="@drawable/navigation"
+                android:layout_marginLeft="20dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:id="@+id/imageView18"
+                android:src="@drawable/vent"
+                android:layout_weight="1" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/id_praise_num_detail_shits"
+                android:layout_weight="10"
+                android:textSize="@dimen/text_size"
+                android:text="1000" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

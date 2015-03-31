@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.actionbarsherlock.internal.widget.TabsLinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    style="?attr/actionBarTabBarStyle"
+/>
+<<<<<<< Updated upstream
+<!-- From: file:/E:/VentHub/VentHub/libraries/actionbarsherlock_library/res/layout/abs__action_bar_tab_bar_view.xml --><!-- From: file:/E:/VentHub/VentHub/libraries/actionbarsherlock_library/build/intermediates/bundles/debug/res/layout/abs__action_bar_tab_bar_view.xml -->
+=======
+<!-- From: file:/D:/Androidgithub/VentHub/VentHub/libraries/actionbarsherlock_library/res/layout/abs__action_bar_tab_bar_view.xml --><!-- From: file:/D:/Androidgithub/VentHub/VentHub/libraries/actionbarsherlock_library/build/intermediates/bundles/debug/res/layout/abs__action_bar_tab_bar_view.xml -->
+>>>>>>> Stashed changes

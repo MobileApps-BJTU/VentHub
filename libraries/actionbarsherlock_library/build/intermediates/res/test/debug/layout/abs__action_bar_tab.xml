@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<view
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    class="com.actionbarsherlock.internal.widget.ScrollingTabContainerView$TabView"
+    style="?attr/actionBarTabStyle"
+<<<<<<< Updated upstream
+/><!-- From: file:/E:/VentHub/VentHub/libraries/actionbarsherlock_library/res/layout/abs__action_bar_tab.xml --><!-- From: file:/E:/VentHub/VentHub/libraries/actionbarsherlock_library/build/intermediates/bundles/debug/res/layout/abs__action_bar_tab.xml -->
+=======
+/><!-- From: file:/D:/Androidgithub/VentHub/VentHub/libraries/actionbarsherlock_library/res/layout/abs__action_bar_tab.xml --><!-- From: file:/D:/Androidgithub/VentHub/VentHub/libraries/actionbarsherlock_library/build/intermediates/bundles/debug/res/layout/abs__action_bar_tab.xml -->
+>>>>>>> Stashed changes
