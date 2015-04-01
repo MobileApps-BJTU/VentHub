@@ -1,22 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-=======
->>>>>>> Stashed changes
-    <!-- From: file:/D:/Androidgithub/VentHub/VentHub/libraries/actionbarsherlock_library/res/values-sw600dp/abs__bools.xml -->
+    <!-- From: file:/Users/KunKun/VentHub/libraries/actionbarsherlock_library/res/values-sw600dp/abs__bools.xml -->
     <eat-comment/>
     <bool name="abs__action_bar_expanded_action_views_exclusive">false</bool>
-    <!-- From: file:/D:/Androidgithub/VentHub/VentHub/libraries/actionbarsherlock_library/res/values-sw600dp/abs__dimens.xml -->
-<<<<<<< Updated upstream
-=======
-    <!-- From: file:/E:/VentHub/VentHub/libraries/actionbarsherlock_library/res/values-sw600dp/abs__bools.xml -->
-    <eat-comment/>
-    <bool name="abs__action_bar_expanded_action_views_exclusive">false</bool>
-    <!-- From: file:/E:/VentHub/VentHub/libraries/actionbarsherlock_library/res/values-sw600dp/abs__dimens.xml -->
->>>>>>> 14fb28cb679171e410be9d32dc99c7b31821e27c
-=======
->>>>>>> Stashed changes
+    <!-- From: file:/Users/KunKun/VentHub/libraries/actionbarsherlock_library/res/values-sw600dp/abs__dimens.xml -->
     <eat-comment/>
     <dimen name="abs__action_bar_default_height">56dip</dimen>
     <dimen name="abs__action_bar_icon_vertical_padding">4dip</dimen>

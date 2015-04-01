@@ -2,25 +2,25 @@
 <items version="2" >
 
     <item
-        jar="/Users/KunKun/eclipse workspace/VentHub/VentHub/app/build/intermediates/exploded-aar/VentHub.libraries/actionbarsherlock_library/unspecified/classes.jar"
+        jar="/Users/KunKun/VentHub/app/build/intermediates/exploded-aar/VentHub.libraries/slidemenu_library/unspecified/classes.jar"
         jumboMode="false"
         revision="19.1.0"
-        sha1="d727724cc05ca8ff0c33a97def231dd63f97f39c">
-        <dex dex="/Users/KunKun/eclipse workspace/VentHub/VentHub/app/build/intermediates/pre-dexed/debug/classes-a4af620ef2b4ec35a6ff21d50ea9a95828e55b3e.jar" />
+        sha1="b354b1bd2b29f2c01faf6dbb11447c4290f118d9">
+        <dex dex="/Users/KunKun/VentHub/app/build/intermediates/pre-dexed/debug/classes-2ba082a5634a35295122e5735f460f77e1bf3d60.jar" />
     </item>
     <item
         jar="/Users/KunKun/应用程序/android-sdks/extras/android/m2repository/com/android/support/support-v4/19.0.0/support-v4-19.0.0.jar"
         jumboMode="false"
         revision="19.1.0"
         sha1="afee690af14bd2c32d400cdf78e746fd45c386fa">
-        <dex dex="/Users/KunKun/eclipse workspace/VentHub/VentHub/app/build/intermediates/pre-dexed/debug/support-v4-19.0.0-71543ce4a8ed13558f390d3f298c9d0357c5929e.jar" />
+        <dex dex="/Users/KunKun/VentHub/app/build/intermediates/pre-dexed/debug/support-v4-19.0.0-71543ce4a8ed13558f390d3f298c9d0357c5929e.jar" />
     </item>
     <item
-        jar="/Users/KunKun/eclipse workspace/VentHub/VentHub/app/build/intermediates/exploded-aar/VentHub.libraries/slidemenu_library/unspecified/classes.jar"
+        jar="/Users/KunKun/VentHub/app/build/intermediates/exploded-aar/VentHub.libraries/actionbarsherlock_library/unspecified/classes.jar"
         jumboMode="false"
         revision="19.1.0"
-        sha1="ec8b663f38b7ab6968f48d8b6e2cacfbb311f83e">
-        <dex dex="/Users/KunKun/eclipse workspace/VentHub/VentHub/app/build/intermediates/pre-dexed/debug/classes-ebd37853fb7cc30de07a82dda9f83aa827521958.jar" />
+        sha1="8052c8621777228412a3bbd4d017e94f6ee1f3c7">
+        <dex dex="/Users/KunKun/VentHub/app/build/intermediates/pre-dexed/debug/classes-0170e04d3384a0892d950c6ba64aa9ca273169dc.jar" />
     </item>
 
 </items>

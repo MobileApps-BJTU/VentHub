@@ -20,12 +20,4 @@
     <item
          android:drawable="@drawable/abs__ic_clear_normal" />
 </selector>
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-<!-- From: file:/D:/Androidgithub/VentHub/VentHub/libraries/actionbarsherlock_library/res/drawable/abs__ic_clear.xml -->
-=======
-<!-- From: file:/E:/VentHub/VentHub/libraries/actionbarsherlock_library/res/drawable/abs__ic_clear.xml -->
->>>>>>> 14fb28cb679171e410be9d32dc99c7b31821e27c
-=======
-<!-- From: file:/D:/Androidgithub/VentHub/VentHub/libraries/actionbarsherlock_library/res/drawable/abs__ic_clear.xml -->
->>>>>>> Stashed changes
+<!-- From: file:/Users/KunKun/VentHub/libraries/actionbarsherlock_library/res/drawable/abs__ic_clear.xml -->

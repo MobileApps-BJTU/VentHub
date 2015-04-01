@@ -27,12 +27,4 @@
           android:layout_marginBottom="3dip"
           android:layout_width="match_parent"
           android:layout_height="wrap_content" />
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-<!-- From: file:/D:/Androidgithub/VentHub/VentHub/libraries/actionbarsherlock_library/res/layout/abs__simple_dropdown_hint.xml -->
-=======
-<!-- From: file:/E:/VentHub/VentHub/libraries/actionbarsherlock_library/res/layout/abs__simple_dropdown_hint.xml -->
->>>>>>> 14fb28cb679171e410be9d32dc99c7b31821e27c
-=======
-<!-- From: file:/D:/Androidgithub/VentHub/VentHub/libraries/actionbarsherlock_library/res/layout/abs__simple_dropdown_hint.xml -->
->>>>>>> Stashed changes
+<!-- From: file:/Users/KunKun/VentHub/libraries/actionbarsherlock_library/res/layout/abs__simple_dropdown_hint.xml -->

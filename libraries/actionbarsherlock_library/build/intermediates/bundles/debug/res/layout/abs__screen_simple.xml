@@ -36,12 +36,4 @@ enabled.
          android:foregroundGravity="fill_horizontal|top"
          android:foreground="?attr/windowContentOverlay" />
 </LinearLayout>
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-<!-- From: file:/D:/Androidgithub/VentHub/VentHub/libraries/actionbarsherlock_library/res/layout/abs__screen_simple.xml -->
-=======
-<!-- From: file:/E:/VentHub/VentHub/libraries/actionbarsherlock_library/res/layout/abs__screen_simple.xml -->
->>>>>>> 14fb28cb679171e410be9d32dc99c7b31821e27c
-=======
-<!-- From: file:/D:/Androidgithub/VentHub/VentHub/libraries/actionbarsherlock_library/res/layout/abs__screen_simple.xml -->
->>>>>>> Stashed changes
+<!-- From: file:/Users/KunKun/VentHub/libraries/actionbarsherlock_library/res/layout/abs__screen_simple.xml -->
