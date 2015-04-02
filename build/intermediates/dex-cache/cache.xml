@@ -5,7 +5,7 @@
         jar="/Users/KunKun/VentHub/app/build/intermediates/exploded-aar/VentHub.libraries/slidemenu_library/unspecified/classes.jar"
         jumboMode="false"
         revision="19.1.0"
-        sha1="7e250d4faea6c31b78bfbc06e22901aa98ec7046">
+        sha1="7d328b04fbf650f3513007c6d85a37ace4a9fa78">
         <dex dex="/Users/KunKun/VentHub/app/build/intermediates/pre-dexed/debug/classes-2ba082a5634a35295122e5735f460f77e1bf3d60.jar" />
     </item>
     <item
@@ -19,7 +19,7 @@
         jar="/Users/KunKun/VentHub/app/build/intermediates/exploded-aar/VentHub.libraries/actionbarsherlock_library/unspecified/classes.jar"
         jumboMode="false"
         revision="19.1.0"
-        sha1="04b47821f9bbbd1d47439b328fe3fe1d166817cb">
+        sha1="dd4ef6da9d9e814ab89a58b5443e0e978a1b8c20">
         <dex dex="/Users/KunKun/VentHub/app/build/intermediates/pre-dexed/debug/classes-0170e04d3384a0892d950c6ba64aa9ca273169dc.jar" />
     </item>
 
