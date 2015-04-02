@@ -1,2 +1,4 @@
 target
 server
+.gradle
+.idea
